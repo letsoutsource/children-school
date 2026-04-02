@@ -7,8 +7,10 @@ import {
   Sniglet,
 } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/shared/Navbar";
-import MaxWidthWrapper from "@/components/shared/MaxWidthWrapper";
+import Navbar from "@/components/shared/homepage/Navbar";
+import MaxWidthWrapper from "@/components/shared/homepage/MaxWidthWrapper";
+import EmpowerSection from "@/components/shared/homepage/EmpowerSection";
+import FooterSection from "@/components/shared/homepage/FooterSection";
 
 const fredoka = Fredoka({
   variable: "--font-fredoka",
@@ -61,6 +63,8 @@ export default function RootLayout({
           </MaxWidthWrapper>
         </header>
         {children}
+        <EmpowerSection />
+        <FooterSection /> 
       </body>
     </html>
   );

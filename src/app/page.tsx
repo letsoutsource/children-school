@@ -1,9 +1,26 @@
-import HeroSection from "@/components/shared/HeroSection";
+import HeroSection from "@/components/shared/homepage/HeroSection";
+import WelcomeSection from "@/components/shared/homepage/WelcomeSection";
+import WelcomeSection2 from "@/components/shared/homepage/WelcomeSection2";
+import WelcomeSection3 from "@/components/shared/homepage/WelcomeSection3";
+import OurMission from "@/components/shared/homepage/OurMission";
+import GallarySection from "@/components/shared/homepage/GallarySection";
+import BranchesSection from "@/components/shared/homepage/BranchesSection";
+import ContactSection from "@/components/shared/homepage/ContactSection";
+import EmpowerSection from "@/components/shared/homepage/EmpowerSection";
+import FooterSection from "@/components/shared/homepage/FooterSection";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
+      {/* <WelcomeSection /> */}
+      {/* <WelcomeSection2/> */}
+      <WelcomeSection3/>
+      <OurMission/>
+      <GallarySection/>
+      <BranchesSection/>
+      <ContactSection/>
+      
     </>
   );
 }

@@ -86,13 +86,13 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute bottom-0 lg:-bottom-1/4 left-1/2 z-0 w-full max-w-[980px] -translate-x-1/2 px-4 animate-hero-soft-bounce">
+      <div className="pointer-events-none absolute -bottom-10 sm:-bottom-45 lg:-bottom-3/7 xl:-bottom-1/5 left-1/2 z-0 w-full max-w-[980px] -translate-x-1/2 px-4 animate-hero-soft-bounce">
         <Image
           src="/images/hero-image.png"
           alt="Children in hero section"
           width={980}
           height={551}
-          className="h-auto w-full object-contain drop-shadow-[11px_6.6px_3.3px_rgba(120,34,122,0.72)]"
+          className=" h-auto w-full object-contain drop-shadow-[11px_6.6px_3.3px_rgba(120,34,122,0.72)]"
           priority
         />
       </div>
