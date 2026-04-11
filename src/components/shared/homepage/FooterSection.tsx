@@ -24,9 +24,9 @@ const FooterSection = () => {
                                     className="text-[22px] uppercase leading-[22px] tracking-[1px] text-[#F07BFF]"
                                     style={{ fontFamily: "var(--font-luckiest-guy)" }}
                                 >
-                                    Child&apos;s
+                                    Children&apos;s House
                                     <br />
-                                    House
+                                    Montessori Kindergarten
                                 </p>
                             </div>
 
@@ -34,9 +34,9 @@ const FooterSection = () => {
                                 className="sm:text-[18px] leading-[22px] text-white"
                                 style={{ fontFamily: "Inter, sans-serif" }}
                             >
-                                Paasivuorenkatu 4 A,
+                                Building 208, Road 55, Block 557,
                                 <br />
-                                00530 Helsinki, Finland.
+                                Janabiyah Highway, Bahrain.
                             </p>
                         </div>
 
@@ -99,7 +99,7 @@ const FooterSection = () => {
                             className="sm:text-[18px] leading-[21px] text-[#F07BFF]"
                             style={{ fontFamily: "Inter, sans-serif" }}
                         >
-                            © 2023 Focal Technologies Oy.
+                            © 2026 Children&apos;s House Montessori Kindergarten.
                         </p>
                     </div>
                 </div>

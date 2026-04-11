@@ -43,8 +43,8 @@ const pacifico = Pacifico({
 });
 
 export const metadata: Metadata = {
-  title: "Children School",
-  description: "Children school landing page",
+  title: "Children's House Montessori Kindergarten",
+  description: "Official website of Children's House Montessori Kindergarten in Bahrain.",
 };
 
 export default function RootLayout({

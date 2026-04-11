@@ -14,9 +14,9 @@ const ContactPageParallaxSection = () => {
     const [activePhase, setActivePhase] = useState(0);
 
     const inputClassName =
-        "h-[65px] w-full rounded-[20px] border-4 border-[#DBDADA] bg-white px-5 text-[18px] leading-[30px] tracking-[0.06em] text-black shadow-[2px_4px_4px_rgba(0,0,0,0.25)] placeholder:text-[#999999] sm:px-8 sm:text-[24px]";
+        "h-[65px] w-full rounded-[20px] border-4 border-[#DBDADA] bg-white px-5 text-[18px] leading-[30px] tracking-[0.06em] text-black shadow-[2px_4px_4px_rgba(0,0,0,0.25)] placeholder:text-[#999999] focus:outline-none focus:ring-0 focus-visible:outline-none sm:px-8 sm:text-[24px]";
     const textareaClassName =
-        "h-[241px] w-full resize-none rounded-[20px] border-4 border-[#DBDADA] bg-white px-5 py-5 text-[18px] leading-[30px] tracking-[0.06em] text-black shadow-[2px_4px_4px_rgba(0,0,0,0.25)] placeholder:text-[#999999] sm:px-8 sm:text-[24px]";
+        "h-[241px] w-full resize-none rounded-[20px] border-4 border-[#DBDADA] bg-white px-5 py-5 text-[18px] leading-[30px] tracking-[0.06em] text-black shadow-[2px_4px_4px_rgba(0,0,0,0.25)] placeholder:text-[#999999] focus:outline-none focus:ring-0 focus-visible:outline-none sm:px-8 sm:text-[24px]";
     const valueTextClass =
         "uppercase text-white leading-[0.95] [-webkit-text-stroke:1.6px_black] sm:[-webkit-text-stroke:2.4px_black]";
 
@@ -109,7 +109,7 @@ const ContactPageParallaxSection = () => {
                                 <svg
                                     viewBox="0 0 240 160"
                                     className="absolute inset-0 h-full w-full"
-                                    aria-label="Child's House"
+                                    aria-label="Children's House Montessori Kindergarten"
                                 >
                                     <defs>
                                         <path id="contact-arc-parallax" d="M 36 116 A 84 84 0 0 1 204 116" />
@@ -122,7 +122,7 @@ const ContactPageParallaxSection = () => {
                                         style={{ textTransform: "uppercase" }}
                                     >
                                         <textPath href="#contact-arc-parallax" startOffset="50%" textAnchor="middle">
-                                            CHILD&apos;S HOUSE
+                                            CHILDREN&apos;S HOUSE
                                         </textPath>
                                     </text>
                                 </svg>

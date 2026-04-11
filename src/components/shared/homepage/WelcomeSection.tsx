@@ -27,7 +27,7 @@ const WelcomeSection = () => {
                             <svg
                                 viewBox="0 0 320 140"
                                 className="w-[80px] sm:w-[200px] xl:w-[360px] h-15 sm:h-34 lg:h-58"
-                                aria-label="Child's House"
+                                aria-label="Children's House Montessori Kindergarten"
                             >
                                 <defs>
                                     <path id="welcome-arc" d="M 35 118 A 125 125 0 0 1 285 118" />
@@ -40,7 +40,7 @@ const WelcomeSection = () => {
                                     style={{ textTransform: "uppercase" }}
                                 >
                                     <textPath href="#welcome-arc" startOffset="50%" textAnchor="middle">
-                                        CHILD&apos;S HOUSE
+                                        CHILDREN&apos;S HOUSE
                                     </textPath>
                                 </text>
                             </svg>
@@ -56,7 +56,7 @@ const WelcomeSection = () => {
                                     textShadow: "0px 2.5px 1px rgba(0, 0, 0, 0.32)",
                                 }}
                             >
-                                <span className="text-[#FFC83F]">Mother&apos;s Pride</span> is a labor of love. Love is
+                                <span className="text-[#FFC83F]">Children&apos;s House Montessori Kindergarten</span> is a labor of love. Love is
                                 what founded the school. Love is what makes it grow and what keeps it
                                 going. Love is what we give, and what we get in return. Welcome to the
                                 most loved preschool!{" "}

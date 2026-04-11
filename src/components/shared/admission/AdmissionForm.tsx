@@ -16,9 +16,9 @@ const instructions = [
 ];
 
 const inputClassName =
-    "h-[55px] w-full rounded-[16px] border-[3px] border-[#DBDADA] bg-white px-5 text-[16px] leading-[28px] tracking-[0.04em] text-black shadow-[2px_3px_3px_rgba(0,0,0,0.2)] placeholder:text-[#999999] sm:text-[18px]";
+    "h-[55px] w-full rounded-[16px] border-[3px] border-[#DBDADA] bg-white px-5 text-[16px] leading-[28px] tracking-[0.04em] text-black shadow-[2px_3px_3px_rgba(0,0,0,0.2)] placeholder:text-[#999999] focus:outline-none focus:ring-0 focus-visible:outline-none sm:text-[18px]";
 const textareaClassName =
-    "h-[160px] w-full resize-none rounded-[16px] border-[3px] border-[#DBDADA] bg-white px-5 py-4 text-[16px] leading-[28px] tracking-[0.04em] text-black shadow-[2px_3px_3px_rgba(0,0,0,0.2)] placeholder:text-[#999999] sm:text-[18px]";
+    "h-[160px] w-full resize-none rounded-[16px] border-[3px] border-[#DBDADA] bg-white px-5 py-4 text-[16px] leading-[28px] tracking-[0.04em] text-black shadow-[2px_3px_3px_rgba(0,0,0,0.2)] placeholder:text-[#999999] focus:outline-none focus:ring-0 focus-visible:outline-none sm:text-[18px]";
 
 const AdmissionForm = () => {
     return (

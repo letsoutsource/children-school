@@ -9,9 +9,9 @@ const BACKGROUND_ROWS = [14, 13, 14, 13, 14, 13, 14, 13, 14, 13, 14, 13];
 const ContactSection = () => {
     const [activePhase, setActivePhase] = useState(0);
     const inputClassName =
-        "h-[65px] w-full rounded-[20px] border-4 border-[#DBDADA] bg-white px-5 text-[18px] leading-[30px] tracking-[0.06em] text-black shadow-[2px_4px_4px_rgba(0,0,0,0.25)] placeholder:text-[#999999] sm:px-8 sm:text-[24px]";
+        "h-[65px] w-full rounded-[20px] border-4 border-[#DBDADA] bg-white px-5 text-[18px] leading-[30px] tracking-[0.06em] text-black shadow-[2px_4px_4px_rgba(0,0,0,0.25)] placeholder:text-[#999999] focus:outline-none focus:ring-0 focus-visible:outline-none sm:px-8 sm:text-[24px]";
     const textareaClassName =
-        "h-[241px] w-full resize-none rounded-[20px] border-4 border-[#DBDADA] bg-white px-5 py-5 text-[18px] leading-[30px] tracking-[0.06em] text-black shadow-[2px_4px_4px_rgba(0,0,0,0.25)] placeholder:text-[#999999] sm:px-8 sm:text-[24px]";
+        "h-[241px] w-full resize-none rounded-[20px] border-4 border-[#DBDADA] bg-white px-5 py-5 text-[18px] leading-[30px] tracking-[0.06em] text-black shadow-[2px_4px_4px_rgba(0,0,0,0.25)] placeholder:text-[#999999] focus:outline-none focus:ring-0 focus-visible:outline-none sm:px-8 sm:text-[24px]";
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -102,7 +102,7 @@ const ContactSection = () => {
                                 <svg
                                     viewBox="0 0 240 160"
                                     className="absolute inset-0 h-full w-full"
-                                    aria-label="Child's House"
+                                    aria-label="Children's House Montessori Kindergarten"
                                 >
                                     <defs>
                                         <path id="contact-arc" d="M 36 116 A 84 84 0 0 1 204 116" />
@@ -115,7 +115,7 @@ const ContactSection = () => {
                                         style={{ textTransform: "uppercase" }}
                                     >
                                         <textPath href="#contact-arc" startOffset="50%" textAnchor="middle">
-                                            CHILD&apos;S HOUSE
+                                            CHILDREN&apos;S HOUSE
                                         </textPath>
                                     </text>
                                 </svg>

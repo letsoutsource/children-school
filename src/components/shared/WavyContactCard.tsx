@@ -74,13 +74,13 @@ const WavyContactCard = ({ gradientId = "wavyGrad" }: { gradientId?: string }) =
                             className={`${valueTextClass} text-[22px] xs:text-[28px] sm:text-[46px]`}
                             style={{ fontFamily: "var(--font-luckiest-guy)", fontWeight: 400 }}
                         >
-                            0311 02 662 52
+                            +973 1769 9844
                         </p>
                         <p
                             className={`${valueTextClass} text-[22px] xs:text-[28px] sm:text-[46px]`}
                             style={{ fontFamily: "var(--font-luckiest-guy)", fontWeight: 400 }}
                         >
-                            0311 02 662 52
+                            +973 3793 7009
                         </p>
                     </div>
 
@@ -100,7 +100,7 @@ const WavyContactCard = ({ gradientId = "wavyGrad" }: { gradientId?: string }) =
                             className={`${valueTextClass} whitespace-nowrap text-[22px] xs:text-[28px] sm:text-[42px]`}
                             style={{ fontFamily: "var(--font-luckiest-guy)", fontWeight: 400 }}
                         >
-                            ABC12-06@GMAIL.COM
+                            childrenshouse.kg@gmail.com
                         </p>
                     </div>
 
@@ -120,13 +120,13 @@ const WavyContactCard = ({ gradientId = "wavyGrad" }: { gradientId?: string }) =
                             className={`${valueTextClass} text-[22px] xs:text-[28px] sm:text-[42px]`}
                             style={{ fontFamily: "var(--font-luckiest-guy)", fontWeight: 400 }}
                         >
-                            17/7, WEST PUNJABI BAGH,
+                            Building 208, Road 55, Block 557,
                         </p>
                         <p
                             className={`${valueTextClass} text-[22px] xs:text-[28px] sm:text-[42px]`}
                             style={{ fontFamily: "var(--font-luckiest-guy)", fontWeight: 400 }}
                         >
-                            NEW DELHI-110026
+                            Janabiyah Highway, Bahrain
                         </p>
                     </div>
                 </div>
