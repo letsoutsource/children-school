@@ -71,13 +71,13 @@ const WavyContactCard = ({ gradientId = "wavyGrad" }: { gradientId?: string }) =
                             Contact
                         </p>
                         <p
-                            className={`${valueTextClass} text-[22px] xs:text-[28px] sm:text-[46px]`}
+                            className={`${valueTextClass} text-[22px] xs:text-[28px] sm:text-[40px]`}
                             style={{ fontFamily: "var(--font-luckiest-guy)", fontWeight: 400 }}
                         >
                             +973 1769 9844
                         </p>
                         <p
-                            className={`${valueTextClass} text-[22px] xs:text-[28px] sm:text-[46px]`}
+                            className={`${valueTextClass} text-[22px] xs:text-[28px] sm:text-[40px]`}
                             style={{ fontFamily: "var(--font-luckiest-guy)", fontWeight: 400 }}
                         >
                             +973 3793 7009
@@ -97,7 +97,7 @@ const WavyContactCard = ({ gradientId = "wavyGrad" }: { gradientId?: string }) =
                             Email
                         </p>
                         <p
-                            className={`${valueTextClass} whitespace-nowrap text-[22px] xs:text-[28px] sm:text-[42px]`}
+                            className={`${valueTextClass} whitespace-nowrap text-[22px] xs:text-[28px] sm:text-[40px]`}
                             style={{ fontFamily: "var(--font-luckiest-guy)", fontWeight: 400 }}
                         >
                             childrenshouse.kg@gmail.com
@@ -117,16 +117,16 @@ const WavyContactCard = ({ gradientId = "wavyGrad" }: { gradientId?: string }) =
                             Address
                         </p>
                         <p
-                            className={`${valueTextClass} text-[22px] xs:text-[28px] sm:text-[42px]`}
+                            className={`${valueTextClass} text-[22px] xs:text-[28px] sm:text-[40px]`}
                             style={{ fontFamily: "var(--font-luckiest-guy)", fontWeight: 400 }}
                         >
-                            Building 208, Road 55, Block 557,
+                            Building 208, Road 55, <br /> Block 557,
                         </p>
                         <p
-                            className={`${valueTextClass} text-[22px] xs:text-[28px] sm:text-[42px]`}
+                            className={`${valueTextClass} text-[22px] xs:text-[28px] sm:text-[40px]`}
                             style={{ fontFamily: "var(--font-luckiest-guy)", fontWeight: 400 }}
                         >
-                            Janabiyah Highway, Bahrain
+                            Janabiyah Highway,<br /> Bahrain
                         </p>
                     </div>
                 </div>

@@ -2,11 +2,12 @@ import React from "react";
 import Image from "next/image";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import CTAButton from "./CTAButton";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
     <section className="hero-section-background relative min-h-screen overflow-hidden">
-    {/* <section
+      {/* <section
       className="relative min-h-screen overflow-hidden"
       style={{
         background:
@@ -52,18 +53,23 @@ const HeroSection = () => {
             </div>
 
             <div className="flex items-center gap-4">
-              <CTAButton
-                variant="curriculum"
-                className="px-4 sm:px-8 py-2 sm:py-4 text-lg sm:text-2xl"
-              >
-                Curriculum
-              </CTAButton>
-              <CTAButton
-                variant="admission"
-                className="px-4 sm:px-8 py-2 sm:py-4 text-lg sm:text-2xl"
-              >
-                Admission
-              </CTAButton>
+              <Link href="/curriculum">
+                <CTAButton
+                  variant="curriculum"
+                  className="px-4 sm:px-8 py-2 sm:py-4 text-lg sm:text-2xl cursor-pointer"
+                >
+                  Curriculum
+                </CTAButton>
+              </Link>
+
+              <Link href="/admission">
+                <CTAButton
+                  variant="admission"
+                  className="px-4 sm:px-8 py-2 sm:py-4 text-lg sm:text-2xl cursor-pointer"
+                >
+                  Admission
+                </CTAButton>
+              </Link>
             </div>
           </div>
         </MaxWidthWrapper>

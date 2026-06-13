@@ -62,6 +62,7 @@ const strategyCards: StrategyCard[] = [
 const TeachingStrategy = () => {
   return (
     <section
+      id="teaching-strategy"
       className="relative overflow-hidden py-20 sm:py-24 lg:min-h-[1649px] lg:py-40"
       style={{ background: "linear-gradient(0deg, #FFFFFF, #FFFFFF), #F7D1FF" }}
     >

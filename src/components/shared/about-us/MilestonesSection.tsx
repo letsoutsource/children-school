@@ -1,11 +1,12 @@
 import Image from "next/image";
 import MaxWidthWrapper from "@/components/shared/homepage/MaxWidthWrapper";
+import type { ReactNode } from "react";
 
 type MilestoneCard = {
   title: string;
   image: string;
   desktopPosition: string;
-  titleContent: JSX.Element;
+  titleContent: ReactNode;
 };
 
 const milestoneCards: MilestoneCard[] = [

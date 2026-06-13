@@ -13,6 +13,83 @@ const BACKGROUND_ROWS = [
 const ContactPageParallaxSection = () => {
     const [activePhase, setActivePhase] = useState(0);
 
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+    });
+    const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+    const [errorMsg, setErrorMsg] = useState("");
+ 
+    const handleChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    ) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({ ...prev, [name]: value }));
+    };
+ 
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        
+        if (!formData.name.trim()) {
+            setErrorMsg("Name is required");
+            setStatus("error");
+            return;
+        }
+        if (!formData.email.trim()) {
+            setErrorMsg("Email is required");
+            setStatus("error");
+            return;
+        }
+        if (!formData.subject.trim()) {
+            setErrorMsg("Subject / Reason is required");
+            setStatus("error");
+            return;
+        }
+        if (!formData.message.trim()) {
+            setErrorMsg("Message is required");
+            setStatus("error");
+            return;
+        }
+ 
+        setStatus("loading");
+        setErrorMsg("");
+ 
+        try {
+            const response = await fetch("/api/send-email", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    type: "contact",
+                    ...formData,
+                }),
+            });
+ 
+            const data = await response.json();
+ 
+            if (!response.ok) {
+                throw new Error(data.message || "Failed to submit. Please try again.");
+            }
+ 
+            setStatus("success");
+            setFormData({
+                name: "",
+                email: "",
+                phone: "",
+                subject: "",
+                message: "",
+            });
+        } catch (error: any) {
+            setErrorMsg(error.message || "Failed to send message. Please try again later.");
+            setStatus("error");
+        }
+    };
+
+
     const inputClassName =
         "h-[65px] w-full rounded-[20px] border-4 border-[#DBDADA] bg-white px-5 text-[18px] leading-[30px] tracking-[0.06em] text-black shadow-[2px_4px_4px_rgba(0,0,0,0.25)] placeholder:text-[#999999] focus:outline-none focus:ring-0 focus-visible:outline-none sm:px-8 sm:text-[24px]";
     const textareaClassName =
@@ -141,64 +218,99 @@ const ContactPageParallaxSection = () => {
                             </p>
                         </div>
 
-                        <form className="mx-auto mt-8 flex w-full max-w-[632px] flex-col gap-4 sm:mt-10 sm:gap-6">
+                        <form onSubmit={handleSubmit} className="mx-auto mt-8 flex w-full max-w-[632px] flex-col gap-4 sm:mt-10 sm:gap-6">
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
                                 <input
+                                    type="text"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    required
                                     className={inputClassName}
                                     style={{ fontFamily: "var(--font-quicksand)", fontWeight: 700 }}
                                     placeholder="Name"
+                                    disabled={status === "loading"}
                                 />
                                 <input
+                                    type="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    required
                                     className={inputClassName}
                                     style={{ fontFamily: "var(--font-quicksand)", fontWeight: 700 }}
-                                    placeholder="Child’s Name"
+                                    placeholder="Email"
+                                    disabled={status === "loading"}
                                 />
                             </div>
 
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
                                 <input
+                                    type="tel"
+                                    name="phone"
+                                    value={formData.phone}
+                                    onChange={handleChange}
                                     className={inputClassName}
                                     style={{ fontFamily: "var(--font-quicksand)", fontWeight: 700 }}
-                                    placeholder="dd/mm/yyyy"
+                                    placeholder="Phone no (Optional)"
+                                    disabled={status === "loading"}
                                 />
-                                <input
+                                <select
+                                    name="subject"
+                                    value={formData.subject}
+                                    onChange={handleChange}
+                                    required
                                     className={inputClassName}
-                                    style={{ fontFamily: "var(--font-quicksand)", fontWeight: 700 }}
-                                    placeholder="Child’s Roll no"
-                                />
-                            </div>
-
-                            <input
-                                className={inputClassName}
-                                style={{ fontFamily: "var(--font-quicksand)", fontWeight: 700 }}
-                                placeholder="Interested in"
-                            />
-
-                            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
-                                <input
-                                    className={inputClassName}
-                                    style={{ fontFamily: "var(--font-quicksand)", fontWeight: 700 }}
-                                    placeholder="E-mail"
-                                />
-                                <input
-                                    className={inputClassName}
-                                    style={{ fontFamily: "var(--font-quicksand)", fontWeight: 700 }}
-                                    placeholder="Phone no"
-                                />
+                                    style={{ fontFamily: "var(--font-quicksand)", fontWeight: 700, color: formData.subject ? "black" : "#999999" }}
+                                    disabled={status === "loading"}
+                                >
+                                    <option value="" disabled hidden>Subject / Reason</option>
+                                    <option value="General Inquiry">General Inquiry</option>
+                                    <option value="Admissions">Admissions Query</option>
+                                    <option value="Fees & Tuition">Fees & Tuition</option>
+                                    <option value="Careers">Careers / Hiring</option>
+                                    <option value="Other">Other / Feedback</option>
+                                </select>
                             </div>
 
                             <textarea
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
+                                required
                                 className={textareaClassName}
                                 style={{ fontFamily: "var(--font-quicksand)", fontWeight: 700 }}
-                                placeholder="Interested in"
+                                placeholder="Message"
+                                disabled={status === "loading"}
                             />
 
+                            {status === "error" && (
+                                <div 
+                                    className="p-4 rounded-[16px] border-3 border-red-500 bg-red-50 text-red-700 text-center text-[16px] leading-[22px] tracking-[0.02em]"
+                                    style={{ fontFamily: "var(--font-quicksand)", fontWeight: 700 }}
+                                >
+                                    {errorMsg}
+                                </div>
+                            )}
+
+                            {status === "success" && (
+                                <div 
+                                    className="p-4 rounded-[16px] border-3 border-green-500 bg-green-50 text-green-700 text-center text-[16px] leading-[22px] tracking-[0.02em]"
+                                    style={{ fontFamily: "var(--font-quicksand)", fontWeight: 700 }}
+                                >
+                                    Your message has been sent successfully! We will get back to you shortly.
+                                </div>
+                            )}
+
                             <button
-                                type="button"
-                                className="flex h-[65px] w-full items-center justify-center rounded-[20px] border-3 border-black bg-[#FFCA2C] shadow-[5px_3px_0px_#000] transition active:translate-y-px"
+                                type="submit"
+                                disabled={status === "loading"}
+                                className="flex h-[65px] w-full items-center justify-center rounded-[20px] border-3 border-black bg-[#FFCA2C] shadow-[5px_3px_0px_#000] transition active:translate-y-px disabled:bg-[#ddd] disabled:text-[#888] disabled:cursor-not-allowed disabled:shadow-none"
                                 style={{ fontFamily: "var(--font-luckiest-guy)" }}
                             >
-                                <span className="text-2xl tracking-[0.06em] text-black">SUBMIT</span>
+                                <span className="text-2xl tracking-[0.06em] text-black">
+                                    {status === "loading" ? "SENDING..." : "SUBMIT"}
+                                </span>
                             </button>
                         </form>
                     </div>

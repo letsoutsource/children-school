@@ -15,12 +15,12 @@ export default function Home() {
       <HeroSection />
       {/* <WelcomeSection /> */}
       {/* <WelcomeSection2/> */}
-      <WelcomeSection3/>
-      <OurMission/>
-      <GallarySection/>
-      <BranchesSection/>
-      <ContactSection/>
-      
+      <WelcomeSection3 />
+      <OurMission />
+      <GallarySection />
+      {/* <BranchesSection/> */}
+      <ContactSection />
+
     </>
   );
 }

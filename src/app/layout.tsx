@@ -11,6 +11,7 @@ import Navbar from "@/components/shared/homepage/Navbar";
 import MaxWidthWrapper from "@/components/shared/homepage/MaxWidthWrapper";
 import EmpowerSection from "@/components/shared/homepage/EmpowerSection";
 import FooterSection from "@/components/shared/homepage/FooterSection";
+import GlobalPageLoader from "@/components/shared/GlobalPageLoader";
 
 const fredoka = Fredoka({
   variable: "--font-fredoka",
@@ -57,6 +58,7 @@ export default function RootLayout({
       <body
         className={`${fredoka.variable} ${luckiestGuy.variable} ${quicksand.variable} ${sniglet.variable} ${pacifico.variable} relative antialiased`}
       >
+        <GlobalPageLoader />
         <header className="pointer-events-none absolute inset-x-0 top-0 z-50">
           <MaxWidthWrapper className="pointer-events-auto">
             <Navbar />
