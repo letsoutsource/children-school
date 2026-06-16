@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import HeroSection from "@/components/shared/homepage/HeroSection";
 import WelcomeSection from "@/components/shared/homepage/WelcomeSection";
 import WelcomeSection2 from "@/components/shared/homepage/WelcomeSection2";
@@ -8,6 +9,11 @@ import BranchesSection from "@/components/shared/homepage/BranchesSection";
 import ContactSection from "@/components/shared/homepage/ContactSection";
 import EmpowerSection from "@/components/shared/homepage/EmpowerSection";
 import FooterSection from "@/components/shared/homepage/FooterSection";
+
+export const metadata: Metadata = {
+  title: "Home | Children's House Montessori Kindergarten",
+  description: "Welcome to Children's House Montessori Kindergarten in Bahrain. Learn about our admissions, Montessori curriculum, and events.",
+};
 
 export default function Home() {
   return (
