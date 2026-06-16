@@ -1,6 +1,7 @@
 import Image from "next/image";
 import CTAButton from "./CTAButton";
 import MaxWidthWrapper from "./MaxWidthWrapper";
+import Link from "next/link";
 
 const EmpowerSection = () => {
     return (
@@ -29,18 +30,22 @@ const EmpowerSection = () => {
                     </h2>
 
                     <div className="flex flex-wrap items-center justify-center gap-4">
-                        <CTAButton
-                            variant="curriculum"
-                            className="h-[58px] min-w-[194px] px-6 text-[26px] leading-[26px] tracking-[0.03em]"
-                        >
-                            Curriculum
-                        </CTAButton>
-                        <CTAButton
-                            variant="admission"
-                            className="h-[58px] min-w-[194px] px-6 text-[26px] leading-[26px] tracking-[0.03em]"
-                        >
-                            Admission
-                        </CTAButton>
+                        <Link href="/curriculum">
+                            <CTAButton
+                                variant="curriculum"
+                                className="h-[58px] min-w-[194px] px-6 text-[26px] leading-[26px] tracking-[0.03em] cursor-pointer"
+                            >
+                                Curriculum
+                            </CTAButton>
+                        </Link>
+                        <Link href="/admission">
+                            <CTAButton
+                                variant="admission"
+                                className="h-[58px] min-w-[194px] px-6 text-[26px] leading-[26px] tracking-[0.03em] cursor-pointer"
+                            >
+                                Admission
+                            </CTAButton>
+                        </Link>
                     </div>
                 </div>
 
