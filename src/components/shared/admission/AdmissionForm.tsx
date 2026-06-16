@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import MaxWidthWrapper from "@/components/shared/homepage/MaxWidthWrapper";
 import WavyContactCard from "@/components/shared/WavyContactCard";
+import Turnstile from "../Turnstile";
 
 const instructions = [
     "Child\u2019s Passport Copy",
@@ -64,6 +65,8 @@ const AdmissionForm = () => {
     });
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
     const [errorMsg, setErrorMsg] = useState("");
+    const [captchaToken, setCaptchaToken] = useState("");
+    const [captchaKey, setCaptchaKey] = useState(0);
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -122,6 +125,12 @@ const AdmissionForm = () => {
             return;
         }
 
+        if (process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY && !captchaToken) {
+            setErrorMsg("Please complete the CAPTCHA verification.");
+            setStatus("error");
+            return;
+        }
+
         setStatus("loading");
         setErrorMsg("");
 
@@ -133,6 +142,7 @@ const AdmissionForm = () => {
                 },
                 body: JSON.stringify({
                     type: "admission",
+                    token: captchaToken,
                     ...formData,
                 }),
             });
@@ -144,6 +154,8 @@ const AdmissionForm = () => {
             }
 
             setStatus("success");
+            setCaptchaToken("");
+            setCaptchaKey((prev) => prev + 1);
             setFormData({
                 name: "",
                 email: "",
@@ -337,9 +349,16 @@ const AdmissionForm = () => {
                                         </div>
                                     )}
 
+                                    <Turnstile
+                                        key={captchaKey}
+                                        onVerify={(token) => setCaptchaToken(token)}
+                                        onError={() => setCaptchaToken("")}
+                                        onExpire={() => setCaptchaToken("")}
+                                    />
+ 
                                     <button
                                         type="submit"
-                                        disabled={status === "loading"}
+                                        disabled={status === "loading" || (!!process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY && !captchaToken)}
                                         className="flex h-[58px] w-full items-center justify-center rounded-[16px] border-3 cursor-pointer border-black bg-[#FFCA2C] shadow-[5px_3px_0px_#000] transition active:translate-y-px disabled:bg-[#ddd] disabled:text-[#888] disabled:cursor-not-allowed disabled:shadow-none"
                                         style={{ fontFamily: "var(--font-luckiest-guy)" }}
                                     >

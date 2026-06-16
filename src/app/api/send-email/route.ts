@@ -96,6 +96,48 @@ export async function POST(req: Request) {
       );
     }
 
+    // Step 3.5: Validate Cloudflare Turnstile CAPTCHA if secret key is present
+    const turnstileSecret = process.env.CLOUDFLARE_TURNSTILE_SECRET_KEY;
+    if (turnstileSecret) {
+      const token = rawBody.token;
+      if (!token) {
+        return NextResponse.json(
+          { message: "Security CAPTCHA token is missing." },
+          { status: 400 }
+        );
+      }
+
+      const clientIp = req.headers.get("x-forwarded-for") || "";
+      const verificationUrl = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+      
+      try {
+        const turnstileRes = await fetch(verificationUrl, {
+          method: "POST",
+          body: new URLSearchParams({
+            secret: turnstileSecret,
+            response: token,
+            remoteip: clientIp.split(",")[0].trim(),
+          }),
+        });
+
+        const verificationResult = await turnstileRes.json();
+        if (!verificationResult.success) {
+          return NextResponse.json(
+            { message: "Security CAPTCHA verification failed. Please reload page and try again." },
+            { status: 400 }
+          );
+        }
+      } catch (err) {
+        console.error("Turnstile verification error:", err);
+        return NextResponse.json(
+          { message: "CAPTCHA verification service error. Please try again later." },
+          { status: 500 }
+        );
+      }
+    } else {
+      console.warn("CLOUDFLARE_TURNSTILE_SECRET_KEY is missing. CAPTCHA validation is bypassed.");
+    }
+
     // Step 4: Validate inputs based on type
     let cleanData: any = {};
     let emailHtml = "";

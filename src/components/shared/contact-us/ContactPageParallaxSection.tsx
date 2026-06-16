@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import MaxWidthWrapper from "@/components/shared/homepage/MaxWidthWrapper";
 import WavyContactCard from "@/components/shared/WavyContactCard";
+import Turnstile from "../Turnstile";
 
 const BLINK_COLORS = ["#FF4848", "#F41FFF", "#FFCA2C", "#2CFF41"];
 const BACKGROUND_ROWS = [
@@ -22,6 +23,8 @@ const ContactPageParallaxSection = () => {
     });
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
     const [errorMsg, setErrorMsg] = useState("");
+    const [captchaToken, setCaptchaToken] = useState("");
+    const [captchaKey, setCaptchaKey] = useState(0);
  
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -53,6 +56,12 @@ const ContactPageParallaxSection = () => {
             setStatus("error");
             return;
         }
+
+        if (process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY && !captchaToken) {
+            setErrorMsg("Please complete the CAPTCHA verification.");
+            setStatus("error");
+            return;
+        }
  
         setStatus("loading");
         setErrorMsg("");
@@ -65,6 +74,7 @@ const ContactPageParallaxSection = () => {
                 },
                 body: JSON.stringify({
                     type: "contact",
+                    token: captchaToken,
                     ...formData,
                 }),
             });
@@ -76,6 +86,8 @@ const ContactPageParallaxSection = () => {
             }
  
             setStatus("success");
+            setCaptchaToken("");
+            setCaptchaKey((prev) => prev + 1);
             setFormData({
                 name: "",
                 email: "",
@@ -302,9 +314,16 @@ const ContactPageParallaxSection = () => {
                                 </div>
                             )}
 
+                            <Turnstile
+                                key={captchaKey}
+                                onVerify={(token) => setCaptchaToken(token)}
+                                onError={() => setCaptchaToken("")}
+                                onExpire={() => setCaptchaToken("")}
+                            />
+ 
                             <button
                                 type="submit"
-                                disabled={status === "loading"}
+                                disabled={status === "loading" || (!!process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY && !captchaToken)}
                                 className="flex h-[65px] w-full items-center justify-center rounded-[20px] border-3 border-black bg-[#FFCA2C] shadow-[5px_3px_0px_#000] transition active:translate-y-px disabled:bg-[#ddd] disabled:text-[#888] disabled:cursor-not-allowed disabled:shadow-none"
                                 style={{ fontFamily: "var(--font-luckiest-guy)" }}
                             >
