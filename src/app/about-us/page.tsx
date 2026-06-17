@@ -15,12 +15,12 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <>
-    <AboutUsHeroSection />
-    <OurMission/> 
-    <DirectorMessageSection />
-    <PrincipalMessageSection />
-    <MilestonesSection />
-    <OurStaffSection />
+      <AboutUsHeroSection />
+      <OurMission />
+      <DirectorMessageSection />
+      <PrincipalMessageSection />
+      <MilestonesSection />
+      {/* <OurStaffSection /> */}
     </>
   )
 }
