@@ -118,7 +118,7 @@ const WelcomeCard = () => {
                             </textPath>
                         </text>
                     </svg>
-                    
+
 
                     {/* Decorative circle */}
                     <div className="h-8 w-8 mt-2 xl:mt-4 rounded-full border-2 border-black bg-[#CC44FF] shadow-[0_4px_14px_rgba(150,0,220,0.40)] sm:h-12 sm:w-12 xl:h-16 xl:w-16" />
@@ -144,7 +144,7 @@ const WelcomeCard = () => {
             <div className="pointer-events-none absolute -left-6 top-[38px] z-20 -rotate-[8deg] sm:-left-10 sm:top-[54px]">
                 <div className="relative h-[72px] w-[60px] overflow-hidden rounded-[12px] border-[3.5px] border-[#E245F7] bg-white shadow-[0_10px_22px_rgba(0,0,0,0.28)] sm:h-[108px] sm:w-[88px] sm:rounded-[16px]">
                     <Image
-                        src="/images/img1.png"
+                        src="/images/2ndimage.avif"
                         alt="Creative student photo"
                         fill
                         className="object-cover"
@@ -157,7 +157,7 @@ const WelcomeCard = () => {
             <div className="pointer-events-none absolute -right-8 bottom-[90px] z-20 rotate-[9deg] sm:-right-10 sm:bottom-[120px]">
                 <div className="relative h-[72px] w-[60px] overflow-hidden rounded-[12px] border-[3.5px] border-[#FFCA2C] bg-white shadow-[0_10px_22px_rgba(0,0,0,0.28)] sm:h-[108px] sm:w-[88px] sm:rounded-[16px]">
                     <Image
-                        src="/images/img2.png"
+                        src="/images/3rdimage.avif"
                         alt="Happy child photo"
                         fill
                         className="object-cover"

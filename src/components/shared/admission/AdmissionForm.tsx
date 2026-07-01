@@ -188,9 +188,9 @@ const AdmissionForm = () => {
                                 textShadow: "8px 6px 2px rgba(0, 0, 0, 0.32)",
                             }}
                         >
-                            Admission
+                            Documents
                             <br />
-                            <span className="text-white">Instructions</span>
+                            <span className="text-white">Required</span>
                         </h1>
 
                         <ul
@@ -355,7 +355,7 @@ const AdmissionForm = () => {
                                         onError={() => setCaptchaToken("")}
                                         onExpire={() => setCaptchaToken("")}
                                     />
- 
+
                                     <button
                                         type="submit"
                                         disabled={status === "loading" || (!!process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY && !captchaToken)}

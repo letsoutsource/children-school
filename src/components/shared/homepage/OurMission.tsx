@@ -1,5 +1,75 @@
 import Image from "next/image";
 
+/**
+ * Curly/organic blob border wrapper for images.
+ * Uses an SVG blob clipPath with a colorful gradient border ring.
+ */
+const CurlyBorderImage = ({
+  src,
+  alt,
+  id,
+}: {
+  src: string;
+  alt: string;
+  id: string;
+}) => {
+  // Organic blob path — irregular rounded shape similar to the sample
+  const blobPath =
+    "M0.44,0.15 C0.13,0.05 0.02,0.25 0.03,0.45 C0.04,0.65 0.05,0.82 0.18,0.92 C0.31,1.02 0.52,0.98 0.68,0.95 C0.84,0.92 0.97,0.82 0.99,0.62 C1.01,0.42 0.98,0.22 0.88,0.12 C0.78,0.02 0.62,0.05 0.44,0.15 Z";
+
+  return (
+    <div className="relative w-full" style={{ aspectRatio: "1 / 0.95" }}>
+      {/* Hidden SVG for clipPath definitions */}
+      <svg
+        width="0"
+        height="0"
+        style={{ position: "absolute" }}
+        aria-hidden="true"
+      >
+        <defs>
+          {/* Outer blob (for gradient border ring) */}
+          <clipPath id={`${id}-outer`} clipPathUnits="objectBoundingBox">
+            <path d={blobPath} />
+          </clipPath>
+          {/* Inner blob (slightly inset for the image) — scale down ~94% from center */}
+          <clipPath id={`${id}-inner`} clipPathUnits="objectBoundingBox">
+            <path
+              d={blobPath}
+              transform="translate(0.03, 0.03) scale(0.94)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+
+      {/* Gradient border ring */}
+      <div
+        className="absolute inset-0"
+        style={{
+          clipPath: `url(#${id}-outer)`,
+          background:
+            "conic-gradient(from 180deg, #F828D3, #FF3B8B, #1A89FF, #39FF1F, #39FF1F, #1A89FF, #F828D3)",
+        }}
+      />
+
+      {/* Image clipped to inner (slightly smaller) blob */}
+      <div
+        className="absolute inset-0"
+        style={{
+          clipPath: `url(#${id}-inner)`,
+        }}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 594px"
+        />
+      </div>
+    </div>
+  );
+};
+
 const OurMission = () => {
   return (
     <section className="relative mx-auto mt-[160px] w-full px-6 sm:mt-[180px] lg:mt-[200px]">
@@ -45,12 +115,10 @@ const OurMission = () => {
       <div className="mx-auto mt-10 flex w-full max-w-[1312px] flex-col gap-14 sm:mt-16 sm:gap-[72px]">
         <div className="flex flex-col items-center justify-center gap-10 lg:flex-row lg:gap-[100px]">
           <div className="w-full max-w-[594px]">
-            <Image
-              src="/svgs/our-mission-img1.svg"
+            <CurlyBorderImage
+              src="/images/4thimage.avif"
               alt="Children learning together"
-              width={620}
-              height={600}
-              className="h-auto w-full"
+              id="mission-blob"
             />
           </div>
 
@@ -124,12 +192,10 @@ const OurMission = () => {
           </div>
 
           <div className="order-1 w-full max-w-[594px] lg:order-2">
-            <Image
-              src="/svgs/our-mission-img2.svg"
+            <CurlyBorderImage
+              src="/images/5thimage.avif"
               alt="Classroom vision scene"
-              width={620}
-              height={600}
-              className="h-auto w-full"
+              id="vision-blob"
             />
           </div>
         </div>
