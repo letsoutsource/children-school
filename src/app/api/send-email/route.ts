@@ -185,35 +185,25 @@ export async function POST(req: Request) {
         );
       }
 
-      const { name, email, gender, childName, dob, age, phone, gradeApplying, message } = parsed.data;
+      const { name, email, phone, message } = parsed.data;
 
       // Sanitize inputs
       const cName = cleanHeader(name);
       const cEmail = cleanHeader(email).replace(/\s/g, "");
-      const cGender = cleanHeader(gender);
-      const cChildName = cleanHeader(childName);
-      const cDob = cleanHeader(dob);
-      const cAge = cleanHeader(age);
       const cPhone = cleanHeader(phone);
-      const cGradeApplying = cleanHeader(gradeApplying);
       const purifiedMessage = sanitizeHtml(message || "", {
         allowedTags: sanitizeHtml.defaults.allowedTags,
         allowedAttributes: {},
       });
       const htmlMessage = purifiedMessage ? purifiedMessage.replace(/\n/g, "<br>") : "No additional information provided.";
 
-      emailSubject = `New Admission Application: ${cChildName} (${cAge}) - ${cGradeApplying}`;
+      emailSubject = `New Admission Inquiry from ${cName}`;
       cleanData = { name: cName, email: cEmail };
 
       emailHtml = getAdmissionEmailTemplate({
         name: cName,
         email: cEmail,
         phone: cPhone,
-        childName: cChildName,
-        gender: cGender,
-        dob: cDob,
-        age: cAge,
-        gradeApplying: cGradeApplying,
         message: htmlMessage,
       });
     }

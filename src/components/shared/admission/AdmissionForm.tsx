@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import MaxWidthWrapper from "@/components/shared/homepage/MaxWidthWrapper";
 import WavyContactCard from "@/components/shared/WavyContactCard";
 import Turnstile from "../Turnstile";
@@ -22,45 +22,11 @@ const inputClassName =
 const textareaClassName =
     "h-[160px] w-full resize-none rounded-[16px] border-[3px] border-[#DBDADA] bg-white px-5 py-4 text-[16px] leading-[28px] tracking-[0.04em] text-black shadow-[2px_3px_3px_rgba(0,0,0,0.2)] placeholder:text-[#999999] focus:outline-none focus:ring-0 focus-visible:outline-none sm:text-[18px]";
 
-const calculateAge = (dobString: string): string => {
-    if (!dobString) return "";
-    const dob = new Date(dobString);
-    if (isNaN(dob.getTime())) return "";
-
-    const today = new Date();
-    let years = today.getFullYear() - dob.getFullYear();
-    let months = today.getMonth() - dob.getMonth();
-
-    if (months < 0 || (months === 0 && today.getDate() < dob.getDate())) {
-        years--;
-        months = 12 + months;
-    }
-
-    if (today.getDate() < dob.getDate() && months > 0) {
-        months--;
-    }
-
-    if (years < 0) return "";
-
-    if (years === 0) {
-        return `${months} month${months !== 1 ? 's' : ''}`;
-    } else if (months === 0) {
-        return `${years} year${years !== 1 ? 's' : ''}`;
-    } else {
-        return `${years} year${years !== 1 ? 's' : ''} ${months} month${months !== 1 ? 's' : ''}`;
-    }
-};
-
 const AdmissionForm = () => {
     const [formData, setFormData] = useState({
         name: "", // Parent/Guardian Name
         email: "",
-        childName: "",
-        gender: "",
-        dob: "",
-        age: "",
         phone: "",
-        gradeApplying: "",
         message: "",
     });
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -69,16 +35,10 @@ const AdmissionForm = () => {
     const [captchaKey, setCaptchaKey] = useState(0);
 
     const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {
         const { name, value } = e.target;
-        setFormData((prev) => {
-            const updated = { ...prev, [name]: value };
-            if (name === "dob") {
-                updated.age = calculateAge(value);
-            }
-            return updated;
-        });
+        setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -94,33 +54,8 @@ const AdmissionForm = () => {
             setStatus("error");
             return;
         }
-        if (!formData.childName.trim()) {
-            setErrorMsg("Child's Name is required");
-            setStatus("error");
-            return;
-        }
-        if (!formData.gender.trim()) {
-            setErrorMsg("Child's Gender is required");
-            setStatus("error");
-            return;
-        }
-        if (!formData.dob.trim()) {
-            setErrorMsg("Child's Date of Birth is required");
-            setStatus("error");
-            return;
-        }
-        if (!formData.age.trim()) {
-            setErrorMsg("Child's Age is required");
-            setStatus("error");
-            return;
-        }
         if (!formData.phone.trim()) {
             setErrorMsg("Phone number is required");
-            setStatus("error");
-            return;
-        }
-        if (!formData.gradeApplying.trim()) {
-            setErrorMsg("Class/Grade applying for is required");
             setStatus("error");
             return;
         }
@@ -159,12 +94,7 @@ const AdmissionForm = () => {
             setFormData({
                 name: "",
                 email: "",
-                childName: "",
-                gender: "",
-                dob: "",
-                age: "",
                 phone: "",
-                gradeApplying: "",
                 message: "",
             });
         } catch (error: any) {
@@ -246,80 +176,17 @@ const AdmissionForm = () => {
                                         />
                                     </div>
 
-                                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
-                                        <input
-                                            type="text"
-                                            name="childName"
-                                            value={formData.childName}
-                                            onChange={handleChange}
-                                            required
-                                            className={inputClassName}
-                                            style={{ fontFamily: "var(--font-quicksand)", fontWeight: 700 }}
-                                            placeholder="Child's Name"
-                                            disabled={status === "loading"}
-                                        />
-                                        <select
-                                            name="gender"
-                                            value={formData.gender}
-                                            onChange={handleChange}
-                                            required
-                                            className={inputClassName}
-                                            style={{ fontFamily: "var(--font-quicksand)", fontWeight: 700, color: formData.gender ? "black" : "#999999" }}
-                                            disabled={status === "loading"}
-                                        >
-                                            <option value="" disabled hidden>Select Gender</option>
-                                            <option value="Male">Male</option>
-                                            <option value="Female">Female</option>
-                                            <option value="Other">Other</option>
-                                        </select>
-                                    </div>
-
-                                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
-                                        <input
-                                            type="date"
-                                            name="dob"
-                                            value={formData.dob}
-                                            onChange={handleChange}
-                                            required
-                                            className={inputClassName}
-                                            style={{ fontFamily: "var(--font-quicksand)", fontWeight: 700 }}
-                                            disabled={status === "loading"}
-                                        />
-                                        <input
-                                            type="text"
-                                            name="age"
-                                            value={formData.age}
-                                            readOnly
-                                            className={`${inputClassName} bg-gray-50 border-gray-300 text-gray-500 cursor-not-allowed`}
-                                            style={{ fontFamily: "var(--font-quicksand)", fontWeight: 700 }}
-                                            placeholder="Age (calculated from DOB)"
-                                        />
-                                    </div>
-
-                                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
-                                        <input
-                                            type="tel"
-                                            name="phone"
-                                            value={formData.phone}
-                                            onChange={handleChange}
-                                            required
-                                            className={inputClassName}
-                                            style={{ fontFamily: "var(--font-quicksand)", fontWeight: 700 }}
-                                            placeholder="Phone no"
-                                            disabled={status === "loading"}
-                                        />
-                                        <input
-                                            type="text"
-                                            name="gradeApplying"
-                                            value={formData.gradeApplying}
-                                            onChange={handleChange}
-                                            required
-                                            className={inputClassName}
-                                            style={{ fontFamily: "var(--font-quicksand)", fontWeight: 700 }}
-                                            placeholder="Class / Grade Applying For"
-                                            disabled={status === "loading"}
-                                        />
-                                    </div>
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        value={formData.phone}
+                                        onChange={handleChange}
+                                        required
+                                        className={inputClassName}
+                                        style={{ fontFamily: "var(--font-quicksand)", fontWeight: 700 }}
+                                        placeholder="Phone no"
+                                        disabled={status === "loading"}
+                                    />
 
                                     <textarea
                                         name="message"

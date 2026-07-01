@@ -48,26 +48,16 @@ export function getAdmissionEmailTemplate({
   name,
   email,
   phone,
-  childName,
-  gender,
-  dob,
-  age,
-  gradeApplying,
   message,
 }: {
   name: string;
   email: string;
   phone: string;
-  childName: string;
-  gender: string;
-  dob: string;
-  age: string;
-  gradeApplying: string;
   message?: string;
 }): string {
   return `
     <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px; border-radius: 10px;">
-      <h2 style="color: #FFCA2C; border-bottom: 2px solid #FFCA2C; padding-bottom: 10px;">New Admission Application</h2>
+      <h2 style="color: #FFCA2C; border-bottom: 2px solid #FFCA2C; padding-bottom: 10px;">New Admission Inquiry</h2>
       <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
         <tr>
           <td style="padding: 8px; font-weight: bold; width: 200px; border-bottom: 1px solid #f5f5f5;">Parent/Guardian:</td>
@@ -80,26 +70,6 @@ export function getAdmissionEmailTemplate({
         <tr>
           <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #f5f5f5;">Phone:</td>
           <td style="padding: 8px; border-bottom: 1px solid #f5f5f5;">${phone}</td>
-        </tr>
-        <tr>
-          <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #f5f5f5;">Child's Name:</td>
-          <td style="padding: 8px; border-bottom: 1px solid #f5f5f5;">${childName}</td>
-        </tr>
-        <tr>
-          <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #f5f5f5;">Child's Gender:</td>
-          <td style="padding: 8px; border-bottom: 1px solid #f5f5f5;">${gender}</td>
-        </tr>
-        <tr>
-          <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #f5f5f5;">Child's D.O.B:</td>
-          <td style="padding: 8px; border-bottom: 1px solid #f5f5f5;">${dob}</td>
-        </tr>
-        <tr>
-          <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #f5f5f5;">Calculated Age:</td>
-          <td style="padding: 8px; border-bottom: 1px solid #f5f5f5;">${age}</td>
-        </tr>
-        <tr>
-          <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #f5f5f5;">Class / Grade Applying For:</td>
-          <td style="padding: 8px; border-bottom: 1px solid #f5f5f5;">${gradeApplying}</td>
         </tr>
       </table>
       <h3 style="color: #333; margin-top: 20px;">Additional Information / Comments:</h3>
