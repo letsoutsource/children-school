@@ -16,7 +16,7 @@ const strategyCards: StrategyCard[] = [
   {
     title: "Play-Based Learning",
     description: "Learning through games and creative play helps kids grasp complex ideas naturally.",
-    image: "/images/teaching-strategy-1.png",
+    image: "/images/gallary-section/gallary-7.avif",
     desktopPosition: "lg:left-[80px] lg:top-[260px]",
     frameClassName:
       "h-[214px] w-[220px] sm:h-[233px] sm:w-[240px] rounded-[48%_52%_45%_55%/_50%_40%_60%_50%]",
@@ -27,7 +27,7 @@ const strategyCards: StrategyCard[] = [
   {
     title: "Hands-On Exploration",
     description: "Learning through games and creative play helps kids grasp complex ideas naturally.",
-    image: "/images/teaching-strategy-2.png",
+    image: "/images/gallary-section/gallary-5.avif",
     desktopPosition: "lg:left-[520px] lg:top-[235px]",
     frameClassName:
       "h-[216px] w-[208px] sm:h-[234px] sm:w-[224px] rounded-[45%_55%_50%_50%/_56%_44%_56%_44%]",
@@ -38,7 +38,7 @@ const strategyCards: StrategyCard[] = [
   {
     title: "Storytelling & Visuals",
     description: "Learning through games and creative play helps kids grasp complex ideas naturally.",
-    image: "/images/teaching-strategy-3.png",
+    image: "/images/bright-classrooms.avif",
     desktopPosition: "lg:right-[20px] lg:top-[560px]",
     frameClassName:
       "h-[214px] w-[220px] sm:h-[233px] sm:w-[240px] rounded-[50%_50%_42%_58%/_52%_48%_58%_42%]",
@@ -49,7 +49,7 @@ const strategyCards: StrategyCard[] = [
   {
     title: "Group & Individual",
     description: "Learning through games and creative play helps kids grasp complex ideas naturally.",
-    image: "/images/teaching-strategy-4.png",
+    image: "/images/group-and-individuals.avif",
     desktopPosition: "lg:left-[400px] lg:top-[730px]",
     frameClassName:
       "h-[214px] w-[220px] sm:h-[233px] sm:w-[240px] rounded-[46%_54%_48%_52%/_58%_42%_56%_44%]",

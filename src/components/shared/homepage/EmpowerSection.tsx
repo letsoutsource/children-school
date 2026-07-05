@@ -51,7 +51,7 @@ const EmpowerSection = () => {
 
                 <div className="relative mx-auto mt-10 h-[300px] w-full max-w-[1007px] overflow-hidden rounded-[16.8px] border-12 border-[#E245F7] sm:shadow-[14px_10px_0px_#9A14AC,0px_8.4px_16.8px_rgba(41,37,36,0.02),0px_6.3px_12.6px_rgba(41,37,36,0.02),0px_4.2px_8.4px_rgba(41,37,36,0.02),0px_2.1px_4.2px_rgba(41,37,36,0.02),0px_1.05px_2.1px_rgba(41,37,36,0.02),0px_1.05px_1.05px_-0.525px_rgba(41,37,36,0.04),inset_12px_12.6px_32px_#000] sm:h-[420px] lg:mt-12 lg:h-[499px]">
                     <Image
-                        src="/images/empower-your-kids.png"
+                        src="/images/empower-kids-section.avif"
                         alt="Empower your kid's creativity"
                         fill
                         className="object-cover"

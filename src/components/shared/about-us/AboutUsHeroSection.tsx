@@ -104,8 +104,8 @@ const AboutUsHeroSection = () => {
                     className="w-full max-w-[616px] text-xl leading-[30px] text-black sm:text-2xl"
                     style={{ fontFamily: "var(--font-quicksand)", fontWeight: 600 }}
                 >
-                    A peek into our colorful days filled with smiles, play, and little
-                    achievements.
+                    At Children&apos;s House, we foster a warm, welcoming environment where kids can
+                    explore their curiosity, build lasting friendships, and grow.
                 </p>
             </div>
         </section>

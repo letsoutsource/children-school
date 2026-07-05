@@ -12,44 +12,44 @@ const facilityCards: FacilityCard[] = [
     {
         title: "Bright Classrooms",
         description: "A peek into our colorful days filled with smiles, play, and little achievements.",
-        image: "/images/facilities-1.png",
+        image: "/images/bright-classrooms.avif",
         borderColor: "#FF2DE7",
     },
     {
         title: "Art & Activity Hub",
         description: "A peek into our colorful days filled with smiles, play, and little achievements.",
-        image: "/images/facilities-2.png",
+        image: "/images/art-and-activity.avif",
         borderColor: "#F1EB00",
     },
     {
         title: "Secure Campus",
         description: "A peek into our colorful days filled with smiles, play, and little achievements.",
-        image: "/images/facilities-3.png",
+        image: "/images/secure-campus.avif",
         borderColor: "#19C8FF",
     },
-    {
-        title: "Secure Campus",
-        description: "A peek into our colorful days filled with smiles, play, and little achievements.",
-        image: "/images/facilities-4.png",
-        borderColor: "#85FF47",
-    },
-    {
-        title: "Bright Classrooms",
-        description: "A peek into our colorful days filled with smiles, play, and little achievements.",
-        image: "/images/facilities-5.png",
-        borderColor: "#FF2D2D",
-    },
-    {
-        title: "Art & Activity Hub",
-        description: "A peek into our colorful days filled with smiles, play, and little achievements.",
-        image: "/images/facilities-6.png",
-        borderColor: "#1919E8",
-    },
+    // {
+    //     title: "Secure Campus",
+    //     description: "A peek into our colorful days filled with smiles, play, and little achievements.",
+    //     image: "/images/facilities-4.png",
+    //     borderColor: "#85FF47",
+    // },
+    // {
+    //     title: "Bright Classrooms",
+    //     description: "A peek into our colorful days filled with smiles, play, and little achievements.",
+    //     image: "/images/facilities-5.png",
+    //     borderColor: "#FF2D2D",
+    // },
+    // {
+    //     title: "Art & Activity Hub",
+    //     description: "A peek into our colorful days filled with smiles, play, and little achievements.",
+    //     image: "/images/facilities-6.png",
+    //     borderColor: "#1919E8",
+    // },
 ];
 
 const FacilitiesSection = () => {
     return (
-        <section className="bg-[#FFF4D1] py-20 sm:py-24 lg:min-h-[1698px] lg:py-40">
+        <section className="bg-[#FFF4D1] py-20 sm:py-24 lg:min-h-[998px] lg:py-40">
             <MaxWidthWrapper className="px-4 sm:px-6">
                 <div className="mx-auto flex w-full max-w-[992px] flex-col items-center gap-10 text-center">
                     <div className="flex w-full flex-col items-center gap-6">

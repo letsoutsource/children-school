@@ -135,7 +135,7 @@ const WavyContactCard = ({ gradientId = "wavyGrad" }: { gradientId?: string }) =
             <div className="pointer-events-none absolute left-0 top-[42px] z-20 -rotate-[7deg] sm:-left-6 sm:top-[74px] lg:-left-4">
                 <div className="relative h-[80px] w-[80px] overflow-hidden rounded-[14px] border-4 border-[#E245F7] bg-white shadow-[0_14px_24px_rgba(0,0,0,0.3)] sm:h-[110px] sm:w-[110px]">
                     <Image
-                        src="/images/img1.png"
+                        src="/images/2ndimage.avif"
                         alt="Creative student photo"
                         fill
                         className="object-cover"
@@ -147,7 +147,7 @@ const WavyContactCard = ({ gradientId = "wavyGrad" }: { gradientId?: string }) =
             <div className="pointer-events-none absolute right-0 bottom-[76px] z-20 rotate-[9deg] sm:-right-6 sm:bottom-[110px] lg:-right-4">
                 <div className="relative h-[82px] w-[82px] overflow-hidden rounded-[14px] border-4 border-[#FFCA2C] bg-white shadow-[0_14px_24px_rgba(0,0,0,0.3)] sm:h-[112px] sm:w-[112px]">
                     <Image
-                        src="/images/img2.png"
+                        src="/images/3rdimage.avif"
                         alt="Happy child photo"
                         fill
                         className="object-cover"

@@ -113,7 +113,7 @@ const GallarySection = () => {
         <div className="mx-auto mt-14 grid w-full max-w-[1240px] grid-cols-1 gap-x-5 gap-y-8 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 lg:grid-cols-12 lg:gap-x-9 lg:gap-y-14">
           <div className="col-span-1 lg:col-span-4">
             <GalleryCard
-              src="/images/gallary-1.png"
+              src="/images/gallary-section/gallary-1.avif"
               alt="Children celebrating together"
               borderClassName="border-[#EDFF2D]"
               shadowClassName="shadow-[12px_8px_0px_#C0D017]"
@@ -126,7 +126,7 @@ const GallarySection = () => {
 
           <div className="col-span-1 lg:col-span-8">
             <GalleryCard
-              src="/images/gallary-2.png"
+              src="/images/gallary-section/gallary-2.avif"
               alt="Kids painting with colorful hands"
               borderClassName="border-[#FF2D2D]"
               shadowClassName="shadow-[12px_8px_0px_#C21111]"
@@ -139,7 +139,7 @@ const GallarySection = () => {
 
           <div className="col-span-1 lg:col-span-4">
             <GalleryCard
-              src="/images/gallary-3.png"
+              src="/images/gallary-section/gallary-3.avif"
               alt="Color splash portrait"
               borderClassName="border-[#3BFF2D]"
               shadowClassName="shadow-[12px_8px_0px_#1DC012]"
@@ -152,7 +152,7 @@ const GallarySection = () => {
 
           <div className="col-span-1 lg:col-span-4">
             <GalleryCard
-              src="/images/gallary-4.png"
+              src="/images/gallary-section/gallary-4.avif"
               alt="Creative materials close up"
               borderClassName="border-[#FFB52D]"
               shadowClassName="shadow-[12px_8px_0px_#CA8B16]"
@@ -165,7 +165,7 @@ const GallarySection = () => {
 
           <div className="col-span-1 sm:col-span-2 lg:col-span-4">
             <GalleryCard
-              src="/images/gallary-5.png"
+              src="/images/gallary-section/gallary-5.avif"
               alt="Two kids painting together"
               borderClassName="border-[#2DFFDC]"
               shadowClassName="shadow-[12px_8px_0px_#13B196]"
@@ -178,7 +178,7 @@ const GallarySection = () => {
 
           <div className="col-span-1 sm:col-span-2 lg:col-span-8">
             <GalleryCard
-              src="/images/gallary-6.png"
+              src="/images/gallary-section/gallary-6.avif"
               alt="Children reading and learning"
               borderClassName="border-[#FF2DDC]"
               shadowClassName="shadow-[12px_8px_0px_#C517A8]"
@@ -191,7 +191,7 @@ const GallarySection = () => {
 
           <div className="col-span-1 lg:col-span-4">
             <GalleryCard
-              src="/images/gallary-7.png"
+              src="/images/gallary-section/gallary-7.avif"
               alt="Classroom playtime scene"
               borderClassName="border-[#FF2D30]"
               shadowClassName="shadow-[12px_8px_0px_#CC1518]"

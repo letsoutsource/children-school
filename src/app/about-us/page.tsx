@@ -19,7 +19,7 @@ const page = () => {
       <OurMission />
       <DirectorMessageSection />
       <PrincipalMessageSection />
-      <MilestonesSection />
+      {/* <MilestonesSection /> */}
       {/* <OurStaffSection /> */}
     </>
   )

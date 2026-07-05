@@ -15,7 +15,7 @@ type EventCard = {
 const eventCards: EventCard[] = [
   {
     title: "Annual Day",
-    image: "/images/events-1.png",
+    image: "/images/events/anual-day.avif",
     borderColor: "#FF2DDC",
     shadowColor: "#A80CB6",
     pinColor: "#FF2DDC",
@@ -24,7 +24,7 @@ const eventCards: EventCard[] = [
   },
   {
     title: "Art & Craft Day",
-    image: "/images/events-2.png",
+    image: "/images/events/art-and-craft-day.avif",
     borderColor: "#2DFF73",
     shadowColor: "#1FA94F",
     pinColor: "#2DFF73",
@@ -33,7 +33,7 @@ const eventCards: EventCard[] = [
   },
   {
     title: "Cultural Fest",
-    image: "/images/events-3.png",
+    image: "/images/events/culture-day.avif",
     borderColor: "#FFB52D",
     shadowColor: "#BA7F0D",
     pinColor: "#FFB52D",
@@ -42,7 +42,7 @@ const eventCards: EventCard[] = [
   },
   {
     title: "Sports Day",
-    image: "/images/events-4.png",
+    image: "/images/events/sports-day.avif",
     borderColor: "#A02DFF",
     shadowColor: "#7817C1",
     pinColor: "#A02DFF",
@@ -51,7 +51,7 @@ const eventCards: EventCard[] = [
   },
   {
     title: "Theme Days",
-    image: "/images/events-5.png",
+    image: "/images/events/theme-day.avif",
     borderColor: "#2DFFED",
     shadowColor: "#0EACA2",
     pinColor: "#2DFFED",
