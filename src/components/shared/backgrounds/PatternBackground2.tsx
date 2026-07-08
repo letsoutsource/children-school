@@ -55,7 +55,7 @@ const PatternBackground = ({
         // className={`  ${heightClassName} ${className}`.trim()}
         // style={resolvedHeight ? { minHeight: resolvedHeight } : undefined}
         >
-            <div className={`${heightClassName} h-[250px] sm:h-[640px] lg:h-[700px] ${className}`}
+            <div className={`${heightClassName} h-[250px] sm:h-[640px] lg:h-[810px] ${className}`}
                 style={style} aria-hidden="true"
             >
                 {/* <div className=""> */}

@@ -21,7 +21,7 @@ const Navbar = () => {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <nav className="relative flex w-full items-center justify-between px-6 py-8 md:px-12 lg:px-20">
+    <nav className="relative flex items-center justify-between py-5 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="flex items-center gap-2">
         <div className="grid h-12 w-12 place-items-center rounded-full border-[3px] border-white bg-[#FFDA23] text-xl shadow-[5px_2px_1px_#BE2CD2]">
           <span className="h-2 w-2 rounded-full bg-white" />
@@ -41,7 +41,9 @@ const Navbar = () => {
         {navLinks.map((link) => (
           <li
             key={link.label}
-            className={isActive(link.href) ? "text-[#EDFF23]" : "text-black"}
+            className={`transition-colors duration-200 ${
+              isActive(link.href) ? "text-[#BE2CD2]" : "text-black hover:text-[#BE2CD2]"
+            }`}
           >
             <Link href={link.href}>{link.label}</Link>
           </li>
@@ -85,7 +87,7 @@ const Navbar = () => {
       </button>
 
       {isMobileMenuOpen && (
-        <div className="absolute top-[92%] right-6 left-6 z-50 rounded-3xl border-2 border-black bg-white p-5 shadow-[4px_6px_0px_#000] md:left-12 md:right-12 lg:hidden">
+        <div className="absolute top-full right-4 left-4 mt-2 z-50 rounded-3xl border-2 border-black bg-white p-5 shadow-[4px_6px_0px_#000] lg:hidden">
           <ul
             className="flex flex-col gap-4"
             style={{
@@ -101,7 +103,9 @@ const Navbar = () => {
                 <Link
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={isActive(link.href) ? "text-[#EDFF23]" : "text-black"}
+                  className={`transition-colors duration-200 ${
+                    isActive(link.href) ? "text-[#BE2CD2]" : "text-black hover:text-[#BE2CD2]"
+                  }`}
                 >
                   {link.label}
                 </Link>

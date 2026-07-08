@@ -80,7 +80,7 @@ const WelcomeSection = () => {
             <PatternBackground2
                 backgroundColor="#ffffff"
                 boxColor="#ECE99C"
-                className="overflow-y-visible"
+                className="overflow-y-visible mt-20"
             >
                 <div className="relative mx-auto w-full max-w-[360px] -mt-14 sm:max-w-[520px] sm:-mt-18 xl:max-w-[620px] xl:-mt-22 px-10 sm:px-12 xl:px-16">
                     <WelcomeCard />

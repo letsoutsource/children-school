@@ -92,6 +92,7 @@ const EventCardItem = ({ card }: { card: EventCard }) => {
             fill
             className="object-cover"
             sizes="(min-width:640px) 300px, 230px"
+            unoptimized
           />
         </div>
       </div>

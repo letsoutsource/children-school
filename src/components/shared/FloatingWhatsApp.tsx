@@ -25,6 +25,23 @@ const FloatingWhatsApp = () => {
   return (
     <>
       <style jsx global>{`
+        @keyframes instagram-attention {
+          0%, 90%, 100% {
+            transform: scale(1);
+          }
+          92% {
+            transform: scale(1.1) rotate(-8deg);
+          }
+          94% {
+            transform: scale(1.1) rotate(8deg);
+          }
+          96% {
+            transform: scale(1.1) rotate(-4deg);
+          }
+          98% {
+            transform: scale(1.1) rotate(4deg);
+          }
+        }
         @keyframes whatsapp-attention {
           0%, 90%, 100% {
             transform: scale(1);
@@ -42,30 +59,66 @@ const FloatingWhatsApp = () => {
             transform: scale(1.1) rotate(4deg);
           }
         }
-        @keyframes slow-bounce {
-          0%, 100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-12px);
-          }
+        .animate-instagram-attention {
+          animation: instagram-attention 8s ease-in-out infinite;
+          animation-delay: 4s;
         }
         .animate-whatsapp-attention {
           animation: whatsapp-attention 8s ease-in-out infinite;
         }
-        .animate-slow-bounce {
-          animation: slow-bounce 4s ease-in-out infinite;
-        }
       `}</style>
 
-      <div className="fixed bottom-6 right-6 z-50 group">
-        <div className="relative flex items-center animate-slow-bounce">
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
+        {/* Instagram Button */}
+        <div className="relative flex items-center group/insta">
           {/* Tooltip / Speech Bubble */}
           <div
-            className={`absolute right-full mr-3 whitespace-nowrap bg-white text-black font-bold uppercase tracking-wider text-xs md:text-sm px-4 py-2 rounded-2xl border-2 border-black shadow-[3px_3px_0px_#000000] pointer-events-none transition-all duration-300 ease-out ${showPromo
+            className="absolute right-full mr-3 whitespace-nowrap bg-white text-black font-bold uppercase tracking-wider text-xs md:text-sm px-4 py-2 rounded-2xl border-2 border-black shadow-[3px_3px_0px_#000000] pointer-events-none opacity-0 translate-x-4 transition-all duration-300 ease-out group-hover/insta:opacity-100 group-hover/insta:translate-x-0"
+            style={{ fontFamily: "var(--font-fredoka)" }}
+          >
+            Follow us!
+            {/* Little triangle pointing to the button */}
+            <div className="absolute top-1/2 -translate-y-1/2 -right-[7px] w-3 h-3 bg-white border-r-2 border-t-2 border-black rotate-45" />
+          </div>
+
+          <a
+            href="https://www.instagram.com/the_childrens_house"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Follow us on Instagram"
+            className="animate-instagram-attention flex h-16 w-16 items-center justify-center rounded-full border-2 border-black text-white shadow-[4px_4px_0px_#000000] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-105 hover:shadow-[6px_6px_0px_#000000] active:translate-y-0 active:scale-100 active:shadow-[2px_2px_0px_#000000]"
+            style={{
+              background: "linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)"
+            }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-8 w-8"
+            >
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg>
+          </a>
+        </div>
+
+        {/* Floating WhatsApp Button */}
+        <div className="relative flex items-center group/wa">
+          {/* Tooltip / Speech Bubble */}
+          <div
+            className={`absolute right-full mr-3 whitespace-nowrap bg-white text-black font-bold uppercase tracking-wider text-xs md:text-sm px-4 py-2 rounded-2xl border-2 border-black shadow-[3px_3px_0px_#000000] pointer-events-none transition-all duration-300 ease-out ${
+              showPromo
                 ? "opacity-100 translate-x-0"
-                : "opacity-0 translate-x-4 pointer-events-none md:group-hover:opacity-100 md:group-hover:translate-x-0"
-              }`}
+                : "opacity-0 translate-x-4 group-hover/wa:opacity-100 group-hover/wa:translate-x-0"
+            }`}
             style={{ fontFamily: "var(--font-fredoka)" }}
           >
             Chat with us!
@@ -73,7 +126,6 @@ const FloatingWhatsApp = () => {
             <div className="absolute top-1/2 -translate-y-1/2 -right-[7px] w-3 h-3 bg-white border-r-2 border-t-2 border-black rotate-45" />
           </div>
 
-          {/* Floating WhatsApp Button */}
           <a
             href="https://wa.me/97337937009"
             target="_blank"

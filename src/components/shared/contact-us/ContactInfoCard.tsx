@@ -21,28 +21,22 @@ const ContactInfoCard = () => {
             <div className="relative z-10 mx-auto flex w-full max-w-[670px] flex-col items-center gap-8 text-center sm:gap-9">
               <div className="space-y-1.5">
                 <p
-                  className="text-[32px] leading-none text-black sm:text-[40px]"
+                  className="text-[28px] leading-none text-black sm:text-[36px]"
                   style={{ fontFamily: "var(--font-pacifico)", fontWeight: 400 }}
                 >
                   Contact
                 </p>
-                <p
-                  className={`${valueTextClass} text-[32px] sm:text-[46px]`}
-                  style={{ fontFamily: "var(--font-luckiest-guy)", fontWeight: 400 }}
-                >
+                <p className="text-[20px] sm:text-[26px] font-semibold text-gray-800 tracking-wide font-sans">
                   +973 1769 9844
                 </p>
-                <p
-                  className={`${valueTextClass} text-[32px] sm:text-[46px]`}
-                  style={{ fontFamily: "var(--font-luckiest-guy)", fontWeight: 400 }}
-                >
+                <p className="text-[20px] sm:text-[26px] font-semibold text-gray-800 tracking-wide font-sans">
                   +973 3793 7009
                 </p>
               </div>
 
               <div className="space-y-1.5">
                 <p
-                  className="flex items-center justify-center gap-2 text-[32px] leading-none text-black sm:text-[40px]"
+                  className="flex items-center justify-center gap-2 text-[28px] leading-none text-black sm:text-[36px]"
                   style={{ fontFamily: "var(--font-pacifico)", fontWeight: 400 }}
                 >
                   <span aria-hidden="true">
@@ -52,17 +46,14 @@ const ContactInfoCard = () => {
                   </span>
                   Email
                 </p>
-                <p
-                  className={`${valueTextClass} whitespace-nowrap text-[30px] sm:text-[42px]`}
-                  style={{ fontFamily: "var(--font-luckiest-guy)", fontWeight: 400 }}
-                >
+                <p className="text-[20px] sm:text-[26px] font-semibold text-gray-800 tracking-wide font-sans">
                   childrenshouse.kg@gmail.com
                 </p>
               </div>
 
-              <div className="space-y-1.5">
+              <div className="space-y-1.5 w-full flex flex-col items-center">
                 <p
-                  className="flex items-center justify-center gap-2 text-[32px] leading-none text-black sm:text-[40px]"
+                  className="flex items-center justify-center gap-2 text-[28px] leading-none text-black sm:text-[36px]"
                   style={{ fontFamily: "var(--font-pacifico)", fontWeight: 400 }}
                 >
                   <span aria-hidden="true">
@@ -72,18 +63,24 @@ const ContactInfoCard = () => {
                   </span>
                   Address
                 </p>
-                <p
-                  className={`${valueTextClass} text-[31px] sm:text-[42px]`}
-                  style={{ fontFamily: "var(--font-luckiest-guy)", fontWeight: 400 }}
-                >
+                <p className="text-[20px] sm:text-[26px] font-semibold text-gray-800 tracking-wide font-sans">
                   Building 208, Road 55, Block 557,
                 </p>
-                <p
-                  className={`${valueTextClass} text-[31px] sm:text-[42px]`}
-                  style={{ fontFamily: "var(--font-luckiest-guy)", fontWeight: 400 }}
-                >
+                <p className="text-[20px] sm:text-[26px] font-semibold text-gray-800 tracking-wide font-sans">
                   Janabiyah Highway, Bahrain
                 </p>
+                <div className="w-full max-w-[450px] mt-4 px-2">
+                  <iframe
+                    src="https://maps.google.com/maps?q=Children's%20House%20Montessori%20Kindergarten%20Bahrain&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="200"
+                    style={{ border: 0 }}
+                    allowFullScreen={false}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="rounded-2xl border-2 border-black shadow-[3px_3px_0px_#000000]"
+                  ></iframe>
+                </div>
               </div>
             </div>
           </div>

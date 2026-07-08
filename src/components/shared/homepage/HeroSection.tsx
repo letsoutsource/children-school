@@ -2,22 +2,22 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import MaxWidthWrapper from "./MaxWidthWrapper";
-import CTAButton from "./CTAButton";
-import Link from "next/link";
 
 const slides = [
   {
-    src: "/images/hero_playground.png",
+    src: "/images/hero/hero-slider-1.png",
     alt: "Montessori Kindergarten Playground",
+    text: "Qualified Early Years Educators",
   },
   {
-    src: "/images/hero_classroom.png",
+    src: "/images/hero/hero-slider-2.png",
     alt: "Montessori Kindergarten Classroom",
+    text: "Building Bright Futures by Making Learning Fun, Safe & Meaningful",
   },
   {
-    src: "/images/hero_school.png",
+    src: "/images/hero/hero-slider-3.png",
     alt: "Children's House Montessori School Entrance",
+    text: "A Nurturing Environment Where Love and Learning Bloom",
   },
 ];
 
@@ -31,175 +31,42 @@ const HeroSection = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
   return (
-    <section className="hero-section-background relative min-h-screen overflow-hidden">
-      {/* Background Image Carousel Slider */}
-      <div className="absolute inset-0 z-0 overflow-hidden w-full h-full">
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
-              index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
-            }`}
-          >
-            <Image
-              src={slide.src}
-              alt={slide.alt}
-              fill
-              priority={index === 0}
-              className="object-cover"
-            />
-            {/* Dark overlay to make text highly readable */}
-            <div className="absolute inset-0 bg-black/35 z-20" />
-          </div>
-        ))}
+    <section className="bg-white relative w-full max-w-[1340px] mx-auto h-auto aspect-[16/10] xs:aspect-[16/9] md:aspect-[16/8] lg:aspect-[21/10] overflow-hidden">
+      {/* Padded Container for independent slider */}
+      <div className="w-full h-full px-4 sm:px-6 md:px-8 lg:px-10 pt-4 sm:pt-6 md:pt-10 pb-6 sm:pb-12 md:pb-20 bg-white">
+        <div className="relative w-full h-full overflow-hidden rounded-[24px] sm:rounded-[32px] md:rounded-[40px] bg-white">
+          {slides.map((slide, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
+                }`}
+            >
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                priority={index === 0}
+                className="object-cover rounded-[24px] sm:rounded-[32px] md:rounded-[40px]"
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* Slide Navigation Left/Right Arrows */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 flex h-12 w-12 items-center justify-center rounded-full border-2 border-black bg-white hover:bg-[#EDFF23] text-black shadow-[3px_3px_0px_#000000] hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
-        aria-label="Previous Slide"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="3"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="h-6 w-6"
-        >
-          <path d="m15 18-6-6 6-6" />
-        </svg>
-      </button>
-
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 flex h-12 w-12 items-center justify-center rounded-full border-2 border-black bg-white hover:bg-[#EDFF23] text-black shadow-[3px_3px_0px_#000000] hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
-        aria-label="Next Slide"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="3"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="h-6 w-6"
-        >
-          <path d="m9 18 6-6-6-6" />
-        </svg>
-      </button>
-
-      {/* Indicator Dots */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-2">
+      {/* Indicator Dots at bottom-right with padding relative to the container */}
+      <div className="absolute bottom-6 right-6 sm:bottom-10 sm:right-10 md:bottom-14 md:right-14 z-30 bg-white/95 backdrop-blur-xs rounded-full px-4 py-2.5 flex gap-2.5 shadow-lg border border-gray-100/50">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`h-4 w-4 rounded-full border-2 border-black transition-all cursor-pointer ${
-              index === currentSlide
-                ? "bg-[#EDFF23] w-8 shadow-[1px_2px_0px_#000000]"
-                : "bg-white hover:bg-white/80"
-            }`}
+            className={`h-2.5 w-2.5 rounded-full transition-all duration-300 cursor-pointer ${index === currentSlide
+              ? "bg-[#BE2CD2] scale-110"
+              : "bg-gray-300 hover:bg-gray-400"
+              }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
-      </div>
-
-      {/* Main Content Overlay */}
-      <div className="relative z-20">
-        <MaxWidthWrapper>
-          <div className="mx-auto mt-42 sm:mt-48 flex max-w-[855px] flex-col items-center gap-8 px-4 text-center md:mt-32 3xl:mt-36">
-            <div className="flex flex-col items-center gap-1 sm:gap-3">
-              <h1
-                className="text-4xl sm:text-5xl leading-[1.05] md:text-7xl lg:text-[80px] 3xl:text-[90px]"
-                style={{
-                  fontFamily: "var(--font-luckiest-guy)",
-                  textShadow: "9px 7.2px 1.8px rgba(0, 0, 0, 0.32)",
-                }}
-              >
-                <span className="text-[#FCB037] [text-stroke:3px_black] [-webkit-text-stroke:3px_black]">
-                  QUALIFIED EARLY
-                </span>
-                <br />
-                <span className="text-white [text-stroke:3px_black] [-webkit-text-stroke:3px_black]">
-                  YEARS{" "}
-                </span>
-                <span
-                  className="text-[#2CFF41] text-4xl sm:text-5xl leading-[100px] md:text-6xl lg:text-[80px] 3xl:text-[84px] [text-stroke:2px_black] [-webkit-text-stroke:2px_black]"
-                  style={{
-                    fontFamily: "var(--font-pacifico)",
-                    fontWeight: 400,
-                  }}
-                >
-                  Educators
-                </span>
-              </h1>
-
-              <p
-                className="max-w-[800px] sm:text-lg md:text-2xl text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
-                style={{ fontFamily: "var(--font-quicksand)", fontWeight: 600 }}
-              >
-                Building Bright Futures by Making Learning Fun, Safe &amp;
-                Meaningful
-              </p>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <Link href="/curriculum">
-                <CTAButton
-                  variant="curriculum"
-                  className="px-4 sm:px-8 py-2 sm:py-4 text-lg sm:text-2xl cursor-pointer"
-                >
-                  Curriculum
-                </CTAButton>
-              </Link>
-
-              <Link href="/admission">
-                <CTAButton
-                  variant="admission"
-                  className="px-4 sm:px-8 py-2 sm:py-4 text-lg sm:text-2xl cursor-pointer"
-                >
-                  Admission
-                </CTAButton>
-              </Link>
-            </div>
-          </div>
-        </MaxWidthWrapper>
-      </div>
-
-      {/* HAZ Letters decoration overlay */}
-      <div className="pointer-events-none absolute left-20 top-44 z-20 hidden select-none lg:block">
-        <div
-          className="relative h-[145px] w-[120px]"
-          style={{ fontFamily: "var(--font-sniglet)" }}
-        >
-          <span className="absolute left-3 top-0 -rotate-12 text-6xl font-extrabold text-[#2CEDFF] [-webkit-text-stroke:4px_black]">
-            H
-          </span>
-          <span className="absolute left-0 top-10 -rotate-35 text-6xl font-extrabold text-[#2CFF41] [-webkit-text-stroke:4px_black]">
-            A
-          </span>
-          <span className="absolute left-14 top-7 text-6xl font-extrabold text-[#FF562C] [-webkit-text-stroke:4px_black]">
-            Z
-          </span>
-        </div>
       </div>
     </section>
   );

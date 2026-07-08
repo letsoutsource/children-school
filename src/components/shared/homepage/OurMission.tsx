@@ -56,6 +56,8 @@ const CurlyBorderImage = ({
         className="absolute inset-0"
         style={{
           clipPath: `url(#${id}-inner)`,
+          transform: "translate3d(0, 0, 0)",
+          willChange: "transform",
         }}
       >
         <Image
@@ -64,6 +66,7 @@ const CurlyBorderImage = ({
           fill
           className="object-cover"
           sizes="(max-width: 768px) 100vw, 594px"
+          unoptimized
         />
       </div>
     </div>

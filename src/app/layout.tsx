@@ -60,8 +60,8 @@ export default function RootLayout({
         className={`${fredoka.variable} ${luckiestGuy.variable} ${quicksand.variable} ${sniglet.variable} ${pacifico.variable} relative antialiased`}
       >
         <GlobalPageLoader />
-        <header className="pointer-events-none absolute inset-x-0 top-0 z-50">
-          <MaxWidthWrapper className="pointer-events-auto">
+        <header className="relative w-full bg-white z-50 border-b border-gray-100">
+          <MaxWidthWrapper>
             <Navbar />
           </MaxWidthWrapper>
         </header>

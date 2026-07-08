@@ -9,6 +9,7 @@ import BranchesSection from "@/components/shared/homepage/BranchesSection";
 import ContactSection from "@/components/shared/homepage/ContactSection";
 import EmpowerSection from "@/components/shared/homepage/EmpowerSection";
 import FooterSection from "@/components/shared/homepage/FooterSection";
+import HeroCallToAction from "@/components/shared/homepage/HeroCallToAction";
 
 export const metadata: Metadata = {
   title: "Home | Children's House Montessori Kindergarten",
@@ -21,6 +22,8 @@ export default function Home() {
       <HeroSection />
       {/* <WelcomeSection /> */}
       {/* <WelcomeSection2/> */}
+      <HeroCallToAction />
+
       <WelcomeSection3 />
       <OurMission />
       <GallarySection />
