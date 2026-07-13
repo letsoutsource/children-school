@@ -12,8 +12,8 @@ import FooterSection from "@/components/shared/homepage/FooterSection";
 import HeroCallToAction from "@/components/shared/homepage/HeroCallToAction";
 
 export const metadata: Metadata = {
-  title: "Home | Children's House Montessori Kindergarten",
-  description: "Welcome to Children's House Montessori Kindergarten in Bahrain. Learn about our admissions, Montessori curriculum, and events.",
+  title: "Children's House Montessori Kindergarten | Best Montessori School in Bahrain",
+  description: "Children's House (بيت الأطفال) is the best Montessori school and preschool in Bahrain. Explore our authentic MEAB-accredited nursery and kindergarten programs.",
   alternates: {
     canonical: "/",
   },

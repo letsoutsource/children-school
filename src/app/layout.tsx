@@ -46,8 +46,8 @@ const pacifico = Pacifico({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://childrenshousebahrain.com"),
-  title: "Children's House Montessori Kindergarten",
-  description: "Official website of Children's House Montessori Kindergarten in Bahrain.",
+  title: "Children's House Montessori Kindergarten | Best Montessori School in Bahrain",
+  description: "Welcome to Children's House (بيت الأطفال), the best Montessori school and preschool in Bahrain. Discover our MEAB-accredited curriculum and early learning programs.",
 };
 
 export default function RootLayout({

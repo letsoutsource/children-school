@@ -18,9 +18,9 @@ const FooterSection = () => {
                     <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[244px_220px_220px_1fr_220px] lg:gap-10">
                         <div className="space-y-6">
                             <div className="flex items-start gap-3">
-                                <div className="flex size-10 items-center justify-center rounded-full border-[3px] border-white bg-[#E245F7] shadow-[3px_2px_1px_#BE2CD2]">
+                                {/* <div className="flex size-10 items-center justify-center rounded-full border-[3px] border-white bg-[#E245F7] shadow-[3px_2px_1px_#BE2CD2]">
                                     <div className="size-5 rounded-full bg-[#D23BE8]" />
-                                </div>
+                                </div> */}
                                 <p
                                     className="text-[22px] uppercase leading-[22px] tracking-[1px] text-[#F07BFF]"
                                     style={{ fontFamily: "var(--font-luckiest-guy)" }}
@@ -28,6 +28,8 @@ const FooterSection = () => {
                                     Children&apos;s House
                                     <br />
                                     Montessori Kindergarten
+                                    <br />
+                                    <span className="text-[16px] font-bold text-[#F07BFF] normal-case tracking-wide block mt-1" style={{ fontFamily: "var(--font-quicksand)" }}>(بيت الأطفال)</span>
                                 </p>
                             </div>
 
