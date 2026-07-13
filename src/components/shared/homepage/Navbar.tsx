@@ -41,9 +41,8 @@ const Navbar = () => {
         {navLinks.map((link) => (
           <li
             key={link.label}
-            className={`transition-colors duration-200 ${
-              isActive(link.href) ? "text-[#BE2CD2]" : "text-black hover:text-[#BE2CD2]"
-            }`}
+            className={`transition-colors duration-200 ${isActive(link.href) ? "text-[#BE2CD2]" : "text-black hover:text-[#BE2CD2]"
+              }`}
           >
             <Link href={link.href}>{link.label}</Link>
           </li>
@@ -53,7 +52,7 @@ const Navbar = () => {
       <Link href="/admission">
         <CTAButton
           variant="admission"
-          className="hidden px-6 py-3 text-xl md:px-7 lg:inline-flex"
+          className="hidden px-6 py-3 text-xl md:px-7 lg:inline-flex cursor-pointer"
         >
           Admission
         </CTAButton>
@@ -69,19 +68,16 @@ const Navbar = () => {
         <span className="sr-only">Menu</span>
         <div className="flex flex-col items-center gap-1.5">
           <span
-            className={`h-0.5 w-6 bg-black transition ${
-              isMobileMenuOpen ? "translate-y-2 rotate-45" : ""
-            }`}
+            className={`h-0.5 w-6 bg-black transition ${isMobileMenuOpen ? "translate-y-2 rotate-45" : ""
+              }`}
           />
           <span
-            className={`h-0.5 w-6 bg-black transition ${
-              isMobileMenuOpen ? "opacity-0" : "opacity-100"
-            }`}
+            className={`h-0.5 w-6 bg-black transition ${isMobileMenuOpen ? "opacity-0" : "opacity-100"
+              }`}
           />
           <span
-            className={`h-0.5 w-6 bg-black transition ${
-              isMobileMenuOpen ? "-translate-y-2 -rotate-45" : ""
-            }`}
+            className={`h-0.5 w-6 bg-black transition ${isMobileMenuOpen ? "-translate-y-2 -rotate-45" : ""
+              }`}
           />
         </div>
       </button>
@@ -103,9 +99,8 @@ const Navbar = () => {
                 <Link
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`transition-colors duration-200 ${
-                    isActive(link.href) ? "text-[#BE2CD2]" : "text-black hover:text-[#BE2CD2]"
-                  }`}
+                  className={`transition-colors duration-200 ${isActive(link.href) ? "text-[#BE2CD2]" : "text-black hover:text-[#BE2CD2]"
+                    }`}
                 >
                   {link.label}
                 </Link>
