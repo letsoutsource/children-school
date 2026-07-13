@@ -11,19 +11,19 @@ type FacilityCard = {
 const facilityCards: FacilityCard[] = [
     {
         title: "Bright Classrooms",
-        description: "A peek into our colorful days filled with smiles, play, and little achievements.",
+        description: "Sunlit, orderly learning rooms equipped with child-sized furniture and accessible shelves full of Montessori work.",
         image: "/images/bright-classrooms.avif",
         borderColor: "#FF2DE7",
     },
     {
         title: "Art & Activity Hub",
-        description: "A peek into our colorful days filled with smiles, play, and little achievements.",
+        description: "A dedicated creative space for painting, crafting, and tactile sensory activities to develop fine motor skills.",
         image: "/images/art-and-activity.avif",
         borderColor: "#F1EB00",
     },
     {
         title: "Secure Campus",
-        description: "A peek into our colorful days filled with smiles, play, and little achievements.",
+        description: "A fully enclosed, safe, and nurturing environment monitored constantly to ensure complete peace of mind.",
         image: "/images/secure-campus.avif",
         borderColor: "#19C8FF",
     },
@@ -83,8 +83,7 @@ const FacilitiesSection = () => {
                         className="w-full max-w-[616px] text-xl leading-[30px] text-black sm:text-2xl"
                         style={{ fontFamily: "var(--font-quicksand)", fontWeight: 600 }}
                     >
-                        A peek into our colorful days filled with smiles, play, and little
-                        achievements.
+                        Explore the welcoming spaces designed to nurture your child's learning journey and ensure their safety.
                     </p>
                 </div>
 

@@ -4,6 +4,7 @@ import PatternBackground2 from "@/components/shared/backgrounds/PatternBackgroun
 
 type EventCard = {
   title: string;
+  description: string;
   image: string;
   borderColor: string;
   shadowColor: string;
@@ -15,6 +16,7 @@ type EventCard = {
 const eventCards: EventCard[] = [
   {
     title: "Annual Day",
+    description: "A beautiful end-of-year showcase where children perform and celebrate milestones with families.",
     image: "/images/events/anual-day.avif",
     borderColor: "#FF2DDC",
     shadowColor: "#A80CB6",
@@ -24,6 +26,7 @@ const eventCards: EventCard[] = [
   },
   {
     title: "Art & Craft Day",
+    description: "An exhibition of colorful creations highlighting the students' self-expression and creative growth.",
     image: "/images/events/art-and-craft-day.avif",
     borderColor: "#2DFF73",
     shadowColor: "#1FA94F",
@@ -33,6 +36,7 @@ const eventCards: EventCard[] = [
   },
   {
     title: "Cultural Fest",
+    description: "Celebrating diversity by exploring different countries, traditional costumes, food, and music.",
     image: "/images/events/culture-day.avif",
     borderColor: "#FFB52D",
     shadowColor: "#BA7F0D",
@@ -42,6 +46,7 @@ const eventCards: EventCard[] = [
   },
   {
     title: "Sports Day",
+    description: "Playful physical education events focusing on coordination, balance, and cooperative games.",
     image: "/images/events/sports-day.avif",
     borderColor: "#A02DFF",
     shadowColor: "#7817C1",
@@ -51,6 +56,7 @@ const eventCards: EventCard[] = [
   },
   {
     title: "Theme Days",
+    description: "Interactive themed learning days covering science, nature, and community helpers.",
     image: "/images/events/theme-day.avif",
     borderColor: "#2DFFED",
     shadowColor: "#0EACA2",
@@ -112,8 +118,7 @@ const EventCardItem = ({ card }: { card: EventCard }) => {
           className="mt-2 text-[18px] leading-[1.3] text-black sm:text-[20px] sm:leading-[26px]"
           style={{ fontFamily: "var(--font-quicksand)", fontWeight: 500 }}
         >
-          Learning through games and creative play helps kids grasp complex ideas
-          naturally.
+          {card.description}
         </p>
       </div>
     </article>
@@ -162,8 +167,7 @@ const EventsSection = () => {
               className="w-full max-w-[616px] text-xl leading-[30px] text-black sm:text-2xl"
               style={{ fontFamily: "var(--font-quicksand)", fontWeight: 600 }}
             >
-              A peek into our colorful days filled with smiles, play, and little
-              achievements.
+              A glimpse into the special days and celebrations that enrich our school calendar.
             </p>
           </div>
 

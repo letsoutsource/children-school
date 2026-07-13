@@ -6,58 +6,43 @@ const CurriculumHeroContent = () => {
           className="w-full text-lg leading-[42px] tracking-[0.06em] uppercase text-black sm:text-2xl"
           style={{ fontFamily: "var(--font-pacifico)", fontWeight: 400 }}
         >
-          Curriculum
+          Montessori Curriculum Bahrain
         </p>
 
         <h1
-          className="w-full text-[42px] leading-[1.15] uppercase sm:text-[56px] lg:text-[72px] lg:leading-[90px] [text-stroke:3px_black] [-webkit-text-stroke:1.8px_black] lg:[-webkit-text-stroke:3px_black]"
+          className="w-full text-[36px] leading-[1.15] uppercase sm:text-[50px] lg:text-[64px] lg:leading-[80px] [text-stroke:3px_black] [-webkit-text-stroke:1.8px_black] lg:[-webkit-text-stroke:3px_black]"
           style={{
             fontFamily: "var(--font-luckiest-guy)",
             fontWeight: 400,
             textShadow: "10px 8px 2px rgba(0, 0, 0, 0.32)",
           }}
         >
-          <span className="text-white">A </span>
+          <span className="text-white">The First </span>
+          <br className="xs:hidden" />
           <span
             className="text-[#249AFF] normal-case"
             style={{ fontFamily: "var(--font-pacifico)" }}
           >
-            Joyful
-          </span>
-          <span className="text-white"> Way to </span>
-          <span
-            className="text-[#F41FFF] normal-case"
-            style={{ fontFamily: "var(--font-pacifico)" }}
-          >
-            Learn
-          </span>
-          <span className="text-white">,</span>
+            Children&apos;s
+          </span>{" "}
+          <span className="text-white">House</span>
           <br />
-          <span
-            className="text-[#FF2D2D] normal-case"
-            style={{ fontFamily: "var(--font-pacifico)" }}
-          >
-            Play
-          </span>
-          <span className="text-white">, and </span>
-          <span
-            className="text-[#FFCA2C] normal-case"
-            style={{ fontFamily: "var(--font-pacifico)" }}
-          >
-            Grow
-          </span>
+          <span className="text-white">Since </span>
+          <span className="text-[#F41FFF]">1997</span>
         </h1>
       </div>
 
-      <p
-        className="w-full max-w-[616px] text-xl leading-[30px] text-black sm:text-2xl"
-        style={{ fontFamily: "var(--font-quicksand)", fontWeight: 600 }}
-      >
-        A peek into our colorful days filled with smiles, play, and little
-        achievements.
-      </p>
+      <div className="flex flex-col gap-6 w-full max-w-[850px] text-lg sm:text-xl md:text-2xl leading-[1.6] text-black">
+        <p style={{ fontFamily: "var(--font-quicksand)", fontWeight: 600 }}>
+          At <span className="font-bold text-[#FF2B2B]">Children&apos;s House Montessori Kindergarten</span>, we proudly offer an authentic Montessori curriculum that has been nurturing young hearts and minds in Bahrain since 1997. As the <span className="font-extrabold text-[#249AFF]">first Montessori kindergarten in Bahrain</span> and MEAB-accredited, we bring the true Montessori philosophy to families searching for <span className="font-bold whitespace-nowrap">روضة أطفال مونتيسوري البحرين</span> or <span className="font-bold whitespace-nowrap">روضة مونتيسوري</span>.
+        </p>
+        <p style={{ fontFamily: "var(--font-pacifico)", fontWeight: 400 }} className="text-[#FF2B2B] leading-[1.8] mt-2 text-2xl sm:text-3xl">
+          We call it the <span className="font-bold text-3xl sm:text-4xl text-[#FFCA2C] [-webkit-text-stroke:0.1px_black]" style={{ textShadow: "2px 2px 0px rgba(0, 0, 0, 0.4)" }}>Curriculum of Love</span> &mdash; where every child learns through joyful play, gentle guidance, and hands-on discovery in our prepared Children&apos;s House environment on Janabiyah Highway.
+        </p>
+      </div>
     </div>
   );
 };
 
 export default CurriculumHeroContent;
+

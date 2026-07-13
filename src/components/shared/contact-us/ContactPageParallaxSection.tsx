@@ -167,7 +167,7 @@ const ContactPageParallaxSection = () => {
                                 Contact Us
                             </p>
 
-                            <h2
+                            <h1
                                 className="w-full text-[34px] leading-[1.08] uppercase sm:text-[52px] lg:text-[72px] lg:leading-[80px] [text-stroke:3px_black] [-webkit-text-stroke:1.5px_black] lg:[-webkit-text-stroke:3px_black]"
                                 style={{
                                     fontFamily: "var(--font-luckiest-guy)",
@@ -180,7 +180,7 @@ const ContactPageParallaxSection = () => {
                                 <br />
                                 <span className="text-white">You </span>
                                 <span className="text-[#2CFF41]">Begin</span>
-                            </h2>
+                            </h1>
                         </div>
 
                         <p

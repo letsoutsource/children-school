@@ -4,6 +4,7 @@ import CurriculumValuesSection from "@/components/shared/curriculum/CurriculumVa
 import FacilitiesSection from "@/components/shared/curriculum/FacilitiesSection";
 import TeachingStrategy from "@/components/shared/curriculum/TeachingStrategy";
 import EventsSection from "@/components/shared/curriculum/EventsSection";
+import WhyChooseUsSection from "@/components/shared/curriculum/WhyChooseUsSection";
 
 export const metadata: Metadata = {
   title: "Curriculum | Children's House Montessori Kindergarten",
@@ -18,8 +19,9 @@ const CurriculumPage = () => {
       <FacilitiesSection />
       <TeachingStrategy />
       <EventsSection />
+      <WhyChooseUsSection />
     </>
   );
 };
 
-export default CurriculumPage;
+export default CurriculumPage;

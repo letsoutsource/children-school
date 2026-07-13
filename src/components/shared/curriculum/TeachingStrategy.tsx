@@ -15,7 +15,7 @@ type StrategyCard = {
 const strategyCards: StrategyCard[] = [
   {
     title: "Play-Based Learning",
-    description: "Learning through games and creative play helps kids grasp complex ideas naturally.",
+    description: "Harnessing children's natural curiosity to introduce numeracy, literacy, and social skills through guided play.",
     image: "/images/gallary-section/gallary-7.avif",
     desktopPosition: "lg:left-[80px] lg:top-[260px]",
     frameClassName:
@@ -26,7 +26,7 @@ const strategyCards: StrategyCard[] = [
   },
   {
     title: "Hands-On Exploration",
-    description: "Learning through games and creative play helps kids grasp complex ideas naturally.",
+    description: "Using specialized, self-correcting Montessori materials to make abstract concepts concrete and visual.",
     image: "/images/gallary-section/gallary-5.avif",
     desktopPosition: "lg:left-[520px] lg:top-[235px]",
     frameClassName:
@@ -37,7 +37,7 @@ const strategyCards: StrategyCard[] = [
   },
   {
     title: "Storytelling & Visuals",
-    description: "Learning through games and creative play helps kids grasp complex ideas naturally.",
+    description: "Bringing language and history to life through reading circles, illustrative materials, and creative expression.",
     image: "/images/bright-classrooms.avif",
     desktopPosition: "lg:right-[20px] lg:top-[560px]",
     frameClassName:
@@ -48,7 +48,7 @@ const strategyCards: StrategyCard[] = [
   },
   {
     title: "Group & Individual",
-    description: "Learning through games and creative play helps kids grasp complex ideas naturally.",
+    description: "Fostering independence and cooperative social skills through targeted individual work and mixed-age group tasks.",
     image: "/images/group-and-individuals.avif",
     desktopPosition: "lg:left-[400px] lg:top-[730px]",
     frameClassName:
@@ -97,8 +97,7 @@ const TeachingStrategy = () => {
             className="w-full max-w-[616px] text-xl leading-[30px] text-black sm:text-2xl"
             style={{ fontFamily: "var(--font-quicksand)", fontWeight: 600 }}
           >
-            A peek into our colorful days filled with smiles, play, and little
-            achievements.
+            We combine authentic Montessori principles with creative play to cultivate a life-long love for discovery.
           </p>
         </div>
 
