@@ -9,6 +9,9 @@ import WhyChooseUsSection from "@/components/shared/curriculum/WhyChooseUsSectio
 export const metadata: Metadata = {
   title: "Curriculum | Children's House Montessori Kindergarten",
   description: "Discover our Montessori curriculum, learning values, facilities, and teaching strategies at Children's House.",
+  alternates: {
+    canonical: "/curriculum",
+  },
 };
 
 const CurriculumPage = () => {

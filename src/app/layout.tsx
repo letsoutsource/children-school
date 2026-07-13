@@ -45,6 +45,7 @@ const pacifico = Pacifico({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://childrenshousebahrain.com"),
   title: "Children's House Montessori Kindergarten",
   description: "Official website of Children's House Montessori Kindergarten in Bahrain.",
 };

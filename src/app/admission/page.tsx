@@ -6,6 +6,9 @@ import TeachingStrategy from "@/components/shared/curriculum/TeachingStrategy"
 export const metadata: Metadata = {
   title: "Admission | Children's House Montessori Kindergarten",
   description: "Apply for admission at Children's House. Read instructions, check required documents, and submit your inquiry form.",
+  alternates: {
+    canonical: "/admission",
+  },
 };
 
 const page = () => {

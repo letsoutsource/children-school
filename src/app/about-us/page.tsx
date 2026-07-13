@@ -10,6 +10,9 @@ import OurStaffSection from '@/components/shared/about-us/OurStaffSection'
 export const metadata: Metadata = {
   title: "About Us | Children's House Montessori Kindergarten",
   description: "Meet our team, explore our milestones, and read messages from our Director and Principal at Children's House.",
+  alternates: {
+    canonical: "/about-us",
+  },
 };
 
 const page = () => {

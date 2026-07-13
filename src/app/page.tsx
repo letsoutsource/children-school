@@ -14,6 +14,9 @@ import HeroCallToAction from "@/components/shared/homepage/HeroCallToAction";
 export const metadata: Metadata = {
   title: "Home | Children's House Montessori Kindergarten",
   description: "Welcome to Children's House Montessori Kindergarten in Bahrain. Learn about our admissions, Montessori curriculum, and events.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function Home() {
