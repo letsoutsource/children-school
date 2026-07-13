@@ -12,7 +12,7 @@ import MaxWidthWrapper from "@/components/shared/homepage/MaxWidthWrapper";
 import EmpowerSection from "@/components/shared/homepage/EmpowerSection";
 import FooterSection from "@/components/shared/homepage/FooterSection";
 import GlobalPageLoader from "@/components/shared/GlobalPageLoader";
-import FloatingWhatsApp from "@/components/shared/FloatingWhatsApp";
+import FloatingSocialMedia from "@/components/shared/FloatingSocialMedia";
 
 const fredoka = Fredoka({
   variable: "--font-fredoka",
@@ -68,7 +68,7 @@ export default function RootLayout({
         {children}
         <EmpowerSection />
         <FooterSection /> 
-        <FloatingWhatsApp />
+        <FloatingSocialMedia />
       </body>
     </html>
   );
