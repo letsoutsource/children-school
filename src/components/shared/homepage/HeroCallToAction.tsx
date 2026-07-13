@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const HeroCallToAction = () => {
     return (
-        <section className="hero-section-background relative min-h-[40vh] md:min-h-[75vh] overflow-hidden">
+        <section className=" relative min-h-[40vh] md:min-h-[75vh] overflow-hidden">
             {/* <section
       className="relative min-h-screen overflow-hidden"
       style={{
@@ -14,7 +14,7 @@ const HeroCallToAction = () => {
           "repeating-linear-gradient(to right, #FEC7FF 0px, #FEC7FF 100px, transparent 100px, transparent 206px), linear-gradient(180deg, #E5A4FF 0%, #BA89CD 100%), linear-gradient(0deg, #FEADFF, #FEADFF)",
       }}
     > */}
-            <div className="relative z-20">
+            {/* <div className="relative z-20">
                 <MaxWidthWrapper>
                     <div className="mx-auto mt-12 sm:mt-14 flex max-w-[855px] flex-col items-center gap-8 px-4 text-center md:mt-16 3xl:mt-18">
 
@@ -39,7 +39,7 @@ const HeroCallToAction = () => {
                         </div>
                     </div>
                 </MaxWidthWrapper>
-            </div>
+            </div> */}
 
             <div className="pointer-events-none absolute left-20 top-44 z-10 hidden select-none lg:block">
                 <div
@@ -64,7 +64,7 @@ const HeroCallToAction = () => {
                     alt="Children in hero section"
                     width={980}
                     height={551}
-                    className=" h-auto w-full object-contain drop-shadow-[11px_6.6px_3.3px_rgba(120,34,122,0.72)]"
+                    className=" h-auto w-full object-contain "
                     priority
                 />
             </div>
