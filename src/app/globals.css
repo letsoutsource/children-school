@@ -18,49 +18,67 @@
 
 .hero-section-background {
   background:
-    repeating-linear-gradient(
-      to right,
+    repeating-linear-gradient(to right,
       #FEC7FF 0px,
       #FEC7FF 100px,
       transparent 100px,
-      transparent 206px
-    ),
+      transparent 206px),
     linear-gradient(0deg, #FEADFF, #FEADFF);
 }
 
 @media (max-width: 768px) {
   .hero-section-background {
     background:
-      repeating-linear-gradient(
-        to right,
+      repeating-linear-gradient(to right,
         #FEC7FF 0px,
         #FEC7FF 32px,
         transparent 32px,
-        transparent 64px
-      ),
+        transparent 64px),
       linear-gradient(0deg, #FEADFF, #FEADFF);
   }
 }
 
 @keyframes hero-soft-bounce {
+
   0%,
   100% {
-    transform: translateY(0);
+    transform: translateY(40px);
   }
+
   50% {
-    transform: translateY(-20px);
+    transform: translateY(20px);
+  }
+}
+
+@keyframes hero-soft-bounce-mobile {
+
+  0%,
+  100% {
+    transform: translateY(-10px);
+  }
+
+  50% {
+    transform: translateY(-25px);
   }
 }
 
 .animate-hero-soft-bounce {
-  animation: hero-soft-bounce 2.5s ease-in-out infinite;
+  animation: hero-soft-bounce-mobile 2.5s ease-in-out infinite;
 }
+
+@media (min-width: 640px) {
+  .animate-hero-soft-bounce {
+    animation: hero-soft-bounce 2.5s ease-in-out infinite;
+  }
+}
+
 
 @keyframes slide-in-fade {
   0% {
     opacity: 0;
     transform: translateY(15px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);

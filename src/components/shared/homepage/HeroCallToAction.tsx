@@ -6,42 +6,8 @@ import Link from "next/link";
 
 const HeroCallToAction = () => {
     return (
-        <section className=" relative min-h-[40vh] md:min-h-[75vh] overflow-hidden">
-            {/* <section
-      className="relative min-h-screen overflow-hidden"
-      style={{
-        background:
-          "repeating-linear-gradient(to right, #FEC7FF 0px, #FEC7FF 100px, transparent 100px, transparent 206px), linear-gradient(180deg, #E5A4FF 0%, #BA89CD 100%), linear-gradient(0deg, #FEADFF, #FEADFF)",
-      }}
-    > */}
-            {/* <div className="relative z-20">
-                <MaxWidthWrapper>
-                    <div className="mx-auto mt-12 sm:mt-14 flex max-w-[855px] flex-col items-center gap-8 px-4 text-center md:mt-16 3xl:mt-18">
-
-                        <div className="flex items-center gap-4">
-                            <Link href="/curriculum">
-                                <CTAButton
-                                    variant="curriculum"
-                                    className="px-4 sm:px-8 py-2 sm:py-4 text-lg sm:text-2xl cursor-pointer"
-                                >
-                                    Curriculum
-                                </CTAButton>
-                            </Link>
-
-                            <Link href="/admission">
-                                <CTAButton
-                                    variant="admission"
-                                    className="px-4 sm:px-8 py-2 sm:py-4 text-lg sm:text-2xl cursor-pointer"
-                                >
-                                    Admission
-                                </CTAButton>
-                            </Link>
-                        </div>
-                    </div>
-                </MaxWidthWrapper>
-            </div> */}
-
-            <div className="pointer-events-none absolute left-20 top-44 z-10 hidden select-none lg:block">
+        <section className="relative overflow-hidden w-full max-w-[980px] mx-auto px-4 pt-4 sm:-mt-6 md:-mt-10 lg:-mt-12 ">
+            {/* <div className="pointer-events-none absolute left-20 top-20 z-10 hidden select-none lg:block">
                 <div
                     className="relative h-[145px] w-[120px]"
                     style={{ fontFamily: "var(--font-sniglet)" }}
@@ -56,15 +22,25 @@ const HeroCallToAction = () => {
                         Z
                     </span>
                 </div>
-            </div>
+            </div> */}
 
-            <div className="pointer-events-none absolute -bottom-10 sm:-bottom-45 lg:-bottom-3/7 xl:-bottom-1/5 left-1/2 z-0 w-full max-w-[980px] -translate-x-1/2 px-4 animate-hero-soft-bounce">
+            <div className="relative z-0 w-full animate-hero-soft-bounce">
+                {/* Colorful Patterned Background Backdrop for the Kids Image */}
+                <div
+                    className="absolute -bottom-1 left-1/2 -translate-x-1/2 -z-10 w-[92%] h-[78%] rounded-[24px] sm:rounded-[36px] border-4 sm:border-[5px] border-black shadow-[4px_4px_0px_#000] sm:shadow-[8px_8px_0px_#000]"
+                    style={{
+                        backgroundColor: "#FFF9E6",
+                        backgroundImage: "radial-gradient(#FFB5FE 20%, transparent 20%), radial-gradient(#BEF7FA 20%, transparent 20%)",
+                        backgroundSize: "28px 28px",
+                        backgroundPosition: "0 0, 14px 14px"
+                    }}
+                />
                 <Image
                     src="/images/hero/kids-transparent-bg.png"
                     alt="Children in hero section"
                     width={980}
                     height={551}
-                    className=" h-auto w-full object-contain "
+                    className="h-auto w-full object-contain"
                     priority
                 />
             </div>
