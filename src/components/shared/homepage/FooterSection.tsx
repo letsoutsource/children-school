@@ -15,7 +15,7 @@ const FooterSection = () => {
                 <div className="pointer-events-none absolute -top-8 left-1/2 z-10 h-22 w-full -translate-x-1/2 rounded-full bg-[#FE9A86] blur-xl sm:-top-10 sm:h-26 lg:-top-12 lg:h-32" />
 
                 <div className="relative z-20 rounded-[36px] bg-black px-6 py-8 shadow-[0px_-16px_60px_rgba(254,154,134,0.7),0px_-4px_22px_rgba(255,212,203,0.65)] sm:px-10 sm:py-10 lg:min-h-[386px] lg:rounded-[50.4px] lg:px-[50.4px] lg:pt-[50.4px] lg:pb-[40px]">
-                    <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[244px_220px_220px_1fr_220px] lg:gap-10">
+                    <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[244px_220px_220px_1fr_320px] lg:gap-10">
                         <div className="space-y-6">
                             <div className="flex items-start gap-3">
                                 {/* <div className="flex size-10 items-center justify-center rounded-full border-[3px] border-white bg-[#E245F7] shadow-[3px_2px_1px_#BE2CD2]">
@@ -146,9 +146,11 @@ const FooterSection = () => {
                                 </div>
                                 <div className="space-y-1">
                                     <span className="block text-xs uppercase tracking-wider text-[#F07BFF] font-semibold">Email</span>
-                                    <a href="mailto:childrenshouse.kg@gmail.com" className="hover:text-[#F07BFF] transition-colors break-all">
-                                        childrenshouse.kg@gmail.com
-                                    </a>
+                                    <div className="flex flex-col gap-0.5">
+                                        <a href="mailto:director@childrenshousebahrain.com" className="text-[13px] sm:text-[15px] hover:text-[#F07BFF] transition-colors">director@childrenshousebahrain.com</a>
+                                        <a href="mailto:principal@childrenshousebahrain.com" className="text-[13px] sm:text-[15px] hover:text-[#F07BFF] transition-colors">principal@childrenshousebahrain.com</a>
+                                        <a href="mailto:admission@childrenshousebahrain.com" className="text-[13px] sm:text-[15px] hover:text-[#F07BFF] transition-colors">admission@childrenshousebahrain.com</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

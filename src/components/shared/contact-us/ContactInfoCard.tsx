@@ -46,9 +46,17 @@ const ContactInfoCard = () => {
                   </span>
                   Email
                 </p>
-                <p className="text-[20px] sm:text-[26px] font-semibold text-gray-800 tracking-wide font-sans">
-                  childrenshouse.kg@gmail.com
-                </p>
+                <div className="flex flex-col gap-1">
+                  <a href="mailto:director@childrenshousebahrain.com" className="text-[18px] sm:text-[22px] font-semibold text-gray-800 tracking-wide font-sans hover:text-purple-600 transition-colors break-all">
+                    director@childrenshousebahrain.com
+                  </a>
+                  <a href="mailto:principal@childrenshousebahrain.com" className="text-[18px] sm:text-[22px] font-semibold text-gray-800 tracking-wide font-sans hover:text-purple-600 transition-colors break-all">
+                    principal@childrenshousebahrain.com
+                  </a>
+                  <a href="mailto:admission@childrenshousebahrain.com" className="text-[18px] sm:text-[22px] font-semibold text-gray-800 tracking-wide font-sans hover:text-purple-600 transition-colors break-all">
+                    admission@childrenshousebahrain.com
+                  </a>
+                </div>
               </div>
 
               <div className="space-y-1.5 w-full flex flex-col items-center">
